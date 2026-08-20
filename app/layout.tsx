@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://astra.systems"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://astra-diagnostics.red-fairy-6393.chatgpt.site"),
   title: "Astra — Your PC is talking. Astra translates.",
   description: "Local-first system intelligence for Windows. Ask naturally, inspect the evidence, and stay in control.",
   openGraph: {
