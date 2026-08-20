@@ -1,11 +1,9 @@
-import Link from "next/link";
+import { SiteHeader } from "../site-header";
 
 export const metadata = {title: "Policies — Astra"};
 export default function Policies() {
     return <main className="docs-page">
-        <header className="nav shell"><Link className="brand" href="/"><span className="astra-mark"
-                                                                             aria-hidden="true"><i/><i/><i/></span>ASTRA</Link><Link
-            className="text-link" href="/">← Back to site</Link></header>
+        <SiteHeader />
         <div className="shell policy"><p className="eyebrow amber">POLICIES</p><h1>Built to keep you in control.</h1><p
             className="docs-lede">These product principles explain how Astra handles diagnostics and your choices.</p>
             <section><h2>Read-only diagnostics</h2><p>Astra collects local system information to answer your questions.

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { type CSSProperties, useEffect, useState } from "react";
+import { SiteHeader } from "./site-header";
 
 const releaseUrl = process.env.NEXT_PUBLIC_ASTRA_DOWNLOAD_URL ?? "#download";
 
@@ -38,11 +39,7 @@ export function HomeExperience() {
   const current = scenarios[scenario];
 
   return <main className="site-home">
-    <header className="site-nav-wrap"><nav className="site-nav shell" aria-label="Main navigation">
-      <Link className="brand" href="/"><Mark /><span>ASTRA</span></Link>
-      <div className="nav-links"><a href="#product">Product</a><a href="#demo">Demo</a><Link href="/docs">Docs</Link><Link href="/policies">Trust</Link></div>
-      <div className="nav-actions"><span className="nav-status"><i /> LOCAL-FIRST</span><a className="button button-small" href={releaseUrl}>Download <span>↓</span></a></div>
-    </nav></header>
+    <SiteHeader />
 
     <section className="hero shell">
       <div className="hero-signal" aria-hidden="true"><span /><span /><span /></div>
