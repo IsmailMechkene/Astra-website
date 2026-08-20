@@ -12,7 +12,7 @@ const scenarios = [
   { label: "Security check", question: "Is this PC protected?", answer: "Windows Defender and Firewall are active. Security definitions are current and no immediate action is needed.", metric: "ON", metricLabel: "PROTECTION", evidence: ["Firewall · Active", "Defender · Active", "Definitions · Current"] },
 ];
 
-function Mark() { return <span className="astra-mark" aria-hidden="true"><i /><i /><i /></span>; }
+function Mark() { return <span className="astra-mark" aria-hidden="true"><img src="/astra_logo.svg" alt="" /></span>; }
 
 export function HomeExperience() {
   const [scenario, setScenario] = useState(0);
@@ -43,12 +43,13 @@ export function HomeExperience() {
 
     <section className="hero shell">
       <div className="hero-signal" aria-hidden="true"><span /><span /><span /></div>
+      <div className="hero-logo-watermark" aria-hidden="true"><img src="/astra_logo.svg" alt="" /></div>
       <div className="hero-copy">
-        <p className="eyebrow hero-enter hero-enter-1"><span className="live-dot" />SYSTEM INTELLIGENCE · WINDOWS</p>
+        <p className="eyebrow hero-enter hero-enter-1"><span className="live-dot" />LOCAL SYSTEM INTELLIGENCE · WINDOWS</p>
         <h1 className="hero-enter hero-enter-2">Your PC is talking.<br /><em>Astra translates.</em></h1>
         <p className="lede hero-enter hero-enter-3">Ask a real question. Astra inspects the relevant signals on your machine and gives you a clear, evidence-backed answer—without taking control away from you.</p>
         <div className="hero-actions hero-enter hero-enter-4"><a className="button" href={releaseUrl}>Download for Windows <span>↓</span></a><a className="text-link" href="#demo">Run the demo <span>↘</span></a></div>
-        <div className="hero-proof hero-enter hero-enter-5"><span>Windows 10 / 11</span><span>Read-only diagnostics</span><span>Local or hosted AI</span></div>
+        <div className="hero-proof hero-enter hero-enter-5"><span>Windows 10 / 11</span><span>Read-only by default</span><span>Your AI, your choice</span></div>
       </div>
 
       <div className="hero-product hero-enter hero-enter-4" onPointerMove={movePreview} onPointerLeave={resetPreview} style={{ "--tilt-x": "0deg", "--tilt-y": "0deg" } as CSSProperties}>

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {
-  Activity,
   ArrowRight,
   BookOpenText,
   ChevronDown,
@@ -81,7 +80,7 @@ export function SiteHeader() {
       <div className="site-nav-shell shell">
         <nav className="site-nav" aria-label="Main navigation">
           <Link className="brand island-brand" href="/" aria-label="Astra home" onClick={closeAll}>
-            <span className="island-brand-icon"><Activity size={19} strokeWidth={1.8} aria-hidden="true" /></span>
+            <span className="island-brand-icon"><img src="/astra_logo.svg" alt="" /></span>
             <span>ASTRA</span>
           </Link>
 
