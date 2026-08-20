@@ -2,8 +2,21 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Astra — Windows diagnostics, made clear",
-  description: "Ask Astra about your Windows PC and get clear, local diagnostic answers.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://astra.systems"),
+  title: "Astra — Your PC is talking. Astra translates.",
+  description: "Local-first system intelligence for Windows. Ask naturally, inspect the evidence, and stay in control.",
+  openGraph: {
+    title: "Astra — Your PC is talking. Astra translates.",
+    description: "Local-first system intelligence for Windows.",
+    type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Astra — local-first system intelligence for Windows" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Astra — Your PC is talking. Astra translates.",
+    description: "Local-first system intelligence for Windows.",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
