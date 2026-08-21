@@ -371,7 +371,7 @@ button { color: inherit; }
 /* text-only trust statement */
 .trust-text-only { position:relative; padding:190px 0 200px; grid-template-columns:.7fr 1.3fr; gap:130px; align-items:start; scroll-margin-top:110px; isolation:isolate; }
 .trust-text-only::before { content:""; position:absolute; z-index:-1; inset:0 auto 0 50%; width:100vw; transform:translateX(-50%); background:radial-gradient(circle at 12% 28%,rgba(100,214,200,.065),transparent 31%),linear-gradient(180deg,#090f18 0%,#080d15 100%); border-top:1px solid #172437; border-bottom:1px solid #172437; }
-.trust-editorial-lead { position:sticky; top:150px; }
+.trust-editorial-lead { position:relative; top:auto; align-self:start; }
 .trust-editorial-lead h2 { margin:0; color:#e5edf6; font-size:clamp(52px,5.2vw,76px); line-height:.95; letter-spacing:-.068em; }
 .trust-editorial-lead>p:not(.eyebrow) { max-width:440px; margin:30px 0 34px; color:#93a5b8; font-size:16px; line-height:1.75; }
 .trust-guarantees { padding-top:20px; }
@@ -616,7 +616,7 @@ button { color: inherit; }
 .trust-proof-strip strong { display:block; margin-bottom:8px; color:#cad7e4; font-size:13px; font-weight:600; }
 .open-source-section { position:relative; padding:190px 0 175px; display:grid; grid-template-columns:.76fr 1.24fr; gap:120px; align-items:start; scroll-margin-top:83px; }
 .open-source-section::before { content:""; position:absolute; z-index:-1; inset:0 auto 0 50%; width:100vw; transform:translateX(-50%); background:radial-gradient(circle at 86% 28%,rgba(100,214,200,.055),transparent 27%),#070d16; border-bottom:1px solid #172437; }
-.open-source-intro { position:sticky; top:145px; }
+.open-source-intro { position:relative; top:auto; align-self:start; }
 .open-source-intro h2 { margin:0; color:#e6eef6; font-size:clamp(55px,5.4vw,78px); line-height:.94; letter-spacing:-.068em; }
 .open-source-intro>p:not(.eyebrow) { max-width:440px; margin:30px 0 34px; color:#96a8ba; font-size:16px; line-height:1.75; }
 .open-source-actions { display:flex; flex-wrap:wrap; align-items:center; gap:25px; }
