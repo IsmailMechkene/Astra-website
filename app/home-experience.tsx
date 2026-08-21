@@ -35,14 +35,18 @@ export function HomeExperience() {
       </figure>
     </section>
 
-    <section className="signal-strip" aria-label="Astra product principles"><div className="signal-track"><span>READ THE SIGNALS</span><i /><span>EXPLAIN THE EVIDENCE</span><i /><span>ASK BEFORE ACTION</span><i /><span>KEEP A LOCAL AUDIT TRAIL</span><i /><span>READ THE SIGNALS</span></div></section>
+    <section className="editorial-bridge shell" data-reveal>
+      <div><p className="eyebrow">BUILT FOR UNDERSTANDING</p><span className="editorial-index">01 — PHILOSOPHY</span></div>
+      <p className="editorial-statement">Most system tools start with a warning. Astra starts with a question.</p>
+    </section>
 
-    <section id="product" className="product-story shell" data-reveal><div className="section-intro"><p className="eyebrow">THE SYSTEM, IN CONTEXT</p><h2>Evidence, not alerts.</h2><p>The overview keeps live vitals, active processes, storage pressure, and the selected AI provider visible while you ask questions.</p></div>
-      <div className="product-proof-grid">
+    <section id="product" className="product-story editorial-product shell" data-reveal>
+      <div className="editorial-product-lead"><p className="eyebrow">THE SYSTEM, IN CONTEXT</p><h2>Evidence,<br />not alerts.</h2></div>
+      <div className="editorial-product-body"><p className="product-thesis">The overview keeps live vitals, active processes, storage pressure, and the selected AI provider visible while you ask questions.</p><div className="product-proof-grid">
         <article><span>01</span><h3>Live readings</h3><p>CPU, memory, disk, uptime, and process activity stay visible beside the conversation.</p></article>
         <article><span>02</span><h3>Named sources</h3><p>Every answer can show the local checks Astra used, rather than asking you to trust a score.</p></article>
         <article><span>03</span><h3>Approval first</h3><p>Observation is read-only. Anything that changes Windows requires a clear confirmation.</p></article>
-      </div>
+      </div></div>
     </section>
 
     <section id="demo" className="demo-section product-evidence-section" data-reveal><div className="shell demo-header"><div><p className="eyebrow">CONVERSATIONAL DIAGNOSIS</p><h2>Ask naturally.<br />Inspect the proof.</h2></div><p>Astra answers in plain language, then exposes the local readings behind that answer—source by source.</p></div>
@@ -50,6 +54,12 @@ export function HomeExperience() {
         <img src="/Ask_naturally_section.png" loading="lazy" decoding="async" alt="Astra answering a system overview question and listing the six local read-only checks used" />
         <figcaption><span>REAL ASTRA CONVERSATION</span><p>Six local reads. One direct answer. The reasoning boundary stays visible.</p></figcaption>
       </figure>
+    </section>
+
+    <section className="editorial-principle shell" data-reveal>
+      <p className="eyebrow">A CALMER KIND OF SYSTEM TOOL</p>
+      <blockquote>“Tell me what you found, show me where it came from, and ask before changing anything.”</blockquote>
+      <div className="principle-sequence" aria-label="Astra workflow"><span>READ</span><i /><span>REASON</span><i /><span>EXPLAIN</span><i /><span>ASK</span></div>
     </section>
 
     <section id="trust" className="trust-section trust-evidence shell" data-reveal><div className="trust-heading"><p className="eyebrow amber">YOUR MACHINE. YOUR BOUNDARIES.</p><h2>Privacy you can see.</h2><p>The provider choice, every readable system category, and the approval lock are explicit inside Astra—not buried in policy copy.</p><div className="trust-points"><span>Local Ollama or hosted Groq</span><span>Read-only system categories</span><span>Confirmation locked on</span></div><Link className="text-link" href="/policies">Read the trust model <span>→</span></Link></div>
