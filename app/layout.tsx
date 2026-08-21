@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://astra-diagnostics.red-fairy-6393.chatgpt.site"),
   title: "Astra — Your PC is talking. Astra translates.",
   description: "Local-first system intelligence for Windows. Ask naturally, inspect the evidence, and stay in control.",
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     title: "Astra — Your PC is talking. Astra translates.",
     description: "Local-first system intelligence for Windows.",
