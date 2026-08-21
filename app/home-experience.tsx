@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowUpRight, Code2 } from "lucide-react";
 import { useEffect } from "react";
 import { SiteHeader } from "./site-header";
 
@@ -25,7 +26,7 @@ export function HomeExperience() {
         <div className="hero-brand hero-enter hero-enter-1"><span className="hero-brand-mark"><img src="/astra_logo.svg" alt="" /></span><span>ASTRA</span><i /><small>LOCAL SYSTEM INTELLIGENCE</small></div>
         <h1 className="hero-enter hero-enter-2">Understand your PC.</h1>
         <p className="lede hero-enter hero-enter-3">Ask Astra what is happening. Get a clear answer grounded in live system evidence.</p>
-        <div className="hero-actions hero-enter hero-enter-4"><a className="button" href={releaseUrl}>Download for Windows <span>↓</span></a><a className="text-link" href="#demo">See how it works <span>↘</span></a></div>
+        <div className="hero-actions hero-enter hero-enter-4"><a className="button" href={releaseUrl}>Download for Windows <span>↓</span></a><a className="text-link" href="#how">See how it works <span>↘</span></a></div>
         <p className="hero-credibility hero-enter hero-enter-5">Read-only <i /> Local-first <i /> Windows 10/11</p>
       </div>
 
@@ -49,7 +50,7 @@ export function HomeExperience() {
       </div></div>
     </section>
 
-    <section id="demo" className="demo-section product-evidence-section" data-reveal><div className="shell demo-header"><div><p className="eyebrow">CONVERSATIONAL DIAGNOSIS</p><h2>Ask naturally.<br />Inspect the proof.</h2></div><p>Astra answers in plain language, then exposes the local readings behind that answer—source by source.</p></div>
+    <section id="evidence" className="demo-section product-evidence-section" data-reveal><div className="shell demo-header"><div><p className="eyebrow">REAL PRODUCT EVIDENCE</p><h2>Ask naturally.<br />Inspect the proof.</h2></div><p>This is the actual Astra interface: a plain-language answer with every local reading used to reach it shown source by source.</p></div>
       <figure className="shell evidence-screen diagnosis-screen">
         <img src="/Ask_naturally_section.png" width={1536} height={1024} loading="lazy" decoding="async" alt="Astra answering a system overview question and listing the six local read-only checks used" />
         <figcaption><span>REAL ASTRA CONVERSATION</span><p>Six local reads. One direct answer. The reasoning boundary stays visible.</p></figcaption>
@@ -67,16 +68,23 @@ export function HomeExperience() {
 
     <section id="trust" className="trust-section trust-text-only shell" data-reveal>
       <div className="trust-editorial-lead">
-        <p className="eyebrow amber">LOCAL-FIRST BY DESIGN</p>
-        <h2>Your machine.<br />Your rules.</h2>
-        <p>Astra makes the privacy boundary obvious: what it can read, where reasoning happens, and when your approval is required.</p>
-        <Link className="text-link" href="/policies">Read the trust model <span>→</span></Link>
+        <p className="eyebrow amber">TRUST BY INSPECTION</p>
+        <h2>Clear boundaries.<br />Verifiable behavior.</h2>
+        <p>Astra does not ask for blind trust. Its access model, provider boundary, credential storage, and current limitations are documented plainly.</p>
+        <div className="trust-links"><Link className="text-link" href="/docs#privacy">Privacy & security <span>→</span></Link><a className="text-link secondary" href="https://github.com/IsmailMechkene/Astra" target="_blank" rel="noreferrer">Inspect the source <span>↗</span></a></div>
       </div>
       <div className="trust-guarantees">
-        <article><span>01 / LOCAL</span><div><h3>Readings stay on your PC.</h3><p>System information is gathered and assembled locally before reasoning begins.</p></div><em>ON DEVICE</em></article>
-        <article><span>02 / CHOICE</span><div><h3>You choose where reasoning runs.</h3><p>Use Ollama on-device, or connect Groq with an API key you control.</p></div><em>OLLAMA / GROQ</em></article>
-        <article><span>03 / CONTROL</span><div><h3>Nothing changes without you.</h3><p>Diagnostics are read-only. Any action must be shown and explicitly approved.</p></div><em>APPROVAL REQUIRED</em></article>
+        <article><span>01 / ACCESS</span><div><h3>Diagnostics observe. They do not act.</h3><p>Astra 1.0.0 reads system evidence. It does not delete files, end processes, change settings, or install updates.</p></div><em>READ-ONLY</em></article>
+        <article><span>02 / BOUNDARY</span><div><h3>The data boundary follows your choice.</h3><p>Ollama keeps prompts and evidence local. Groq receives only the prompt and readings selected for hosted reasoning.</p></div><em>OLLAMA / GROQ</em></article>
+        <article><span>03 / IDENTITY</span><div><h3>No Astra account. No telemetry layer.</h3><p>The current release has no Astra analytics, advertising, account, or hosted proxy service.</p></div><em>NO ACCOUNT</em></article>
       </div>
+      <div className="trust-proof-strip"><div><span>01</span><p><strong>OS-backed key storage</strong>Groq credentials use Electron safeStorage on Windows.</p></div><div><span>02</span><p><strong>Explicit provider choice</strong>The reasoning location is visible and user-selected.</p></div><div><span>03</span><p><strong>Public implementation</strong>The application source can be inspected on GitHub.</p></div></div>
+    </section>
+
+    <section id="opensource" className="open-source-section shell" data-reveal>
+      <div className="open-source-intro"><p className="eyebrow">OPEN SOURCE / COMMUNITY</p><h2>Astra is built<br />in public.</h2><p>The repository is public on GitHub. Read how Astra works, report a reproducible problem, or propose a focused improvement.</p><div className="open-source-actions"><a className="oss-primary" href="https://github.com/IsmailMechkene/Astra" target="_blank" rel="noreferrer"><Code2 size={17} aria-hidden="true" />View repository<ArrowUpRight size={15} aria-hidden="true" /></a><a className="text-link" href="https://github.com/IsmailMechkene/Astra/issues" target="_blank" rel="noreferrer">Report an issue <span>↗</span></a></div></div>
+      <div className="contribution-list"><article><span>01 / INSPECT</span><div><h3>Read the implementation.</h3><p>Review the desktop frontend, diagnostic backend, and experiments directly in the public repository.</p></div></article><article><span>02 / REPORT</span><div><h3>Bring reproducible evidence.</h3><p>Open an issue with the Astra version, Windows version, exact symptom, and the relevant diagnostic output.</p></div></article><article><span>03 / CONTRIBUTE</span><div><h3>Propose one focused change.</h3><p>Improve a diagnostic, clarify documentation, strengthen privacy, or make the interface more accessible.</p></div></article></div>
+      <a className="repository-signature" href="https://github.com/IsmailMechkene/Astra" target="_blank" rel="noreferrer"><span><Code2 size={16} aria-hidden="true" />github.com/IsmailMechkene/Astra</span><span>PUBLIC REPOSITORY <ArrowUpRight size={14} aria-hidden="true" /></span></a>
     </section>
 
     <section id="download" className="download-section download-proof shell" data-reveal>
@@ -88,6 +96,6 @@ export function HomeExperience() {
       </div>
     </section>
 
-    <footer className="site-footer shell"><div><Link className="brand" href="/"><Mark />ASTRA</Link><p>System intelligence for Windows.</p></div><div><span>PRODUCT</span><a href="#demo">Demo</a><Link href="/docs">Documentation</Link></div><div><span>TRUST</span><Link href="/policies">Policies</Link><Link href="/docs#privacy">Local diagnostics</Link></div><p>© {new Date().getFullYear()} ASTRA</p></footer>
+    <footer className="site-footer shell"><div><Link className="brand" href="/"><Mark />ASTRA</Link><p>System intelligence for Windows.</p></div><div><span>PRODUCT</span><a href="#how">How it works</a><Link href="/docs">Documentation</Link></div><div><span>COMMUNITY</span><a href="https://github.com/IsmailMechkene/Astra" target="_blank" rel="noreferrer">GitHub</a><Link href="/docs#privacy">Trust & privacy</Link></div><p>© {new Date().getFullYear()} ASTRA</p></footer>
   </main>;
 }
