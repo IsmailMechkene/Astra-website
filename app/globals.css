@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -25,7 +25,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--canvas); }
-body { margin: 0; background: var(--canvas); color: var(--text); font-family: 'IBM Plex Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--canvas); color: var(--text); font-family: 'Instrument Sans', sans-serif; -webkit-font-smoothing: antialiased; }
 body::before { content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none; background: radial-gradient(circle at 78% 6%,rgba(64,124,180,.20),transparent 28%),radial-gradient(circle at 18% 30%,rgba(34,184,165,.10),transparent 24%),linear-gradient(rgba(255,255,255,.014) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.014) 1px,transparent 1px); background-size:auto,auto,48px 48px,48px 48px; mask-image: linear-gradient(to bottom,black,transparent 78%); }
 body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .16; background: repeating-radial-gradient(circle at 20% 30%,rgba(255,255,255,.045) 0 1px,transparent 1px 4px); background-size: 7px 7px; mix-blend-mode: soft-light; }
 a { color: inherit; text-decoration: none; }
@@ -40,10 +40,10 @@ button { color: inherit; }
 .site-nav { position: relative; z-index: 2; height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 10px 0 15px; border: 1px solid rgba(255,255,255,.12); border-radius: 36px; background: rgba(12,17,18,.94); box-shadow: 0 20px 60px rgba(0,0,0,.4),0 1px 0 rgba(255,255,255,.055) inset; backdrop-filter: blur(24px) saturate(145%); transition: border-color var(--normal),box-shadow var(--normal); }
 .site-nav::before { content: ""; position: absolute; inset: 0 12% auto; height: 1px; background: linear-gradient(90deg,transparent,rgba(155,228,217,.36),transparent); pointer-events: none; }
 .site-nav-wrap.has-open-menu .site-nav { border-color: rgba(155,228,217,.25); box-shadow: 0 26px 70px rgba(0,0,0,.46),0 1px 0 rgba(255,255,255,.06) inset; }
-.brand { display: inline-flex; align-items: center; gap: 10px; font: 500 13px 'IBM Plex Mono', monospace; letter-spacing: .17em; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font: 600 13px 'Geist Mono', monospace; letter-spacing: .17em; }
 .island-brand { padding: 0 19px 0 3px; }
-.island-brand-icon { width: 40px; height: 40px; display: inline-grid; place-items: center; flex: none; border: 1px solid rgba(100,214,200,.30); border-radius: 12px; color: var(--teal-soft); background: linear-gradient(135deg,rgba(100,214,200,.18),rgba(91,125,230,.14)); box-shadow: 0 0 20px rgba(82,199,185,.08) inset; transition: border-color var(--fast),background var(--fast),transform var(--normal) var(--ease); }
-.island-brand-icon img { width: 22px; height: 22px; object-fit: contain; filter: invert(88%) sepia(31%) saturate(583%) hue-rotate(117deg) brightness(96%) contrast(94%); }
+.island-brand-icon { width: 44px; height: 44px; display: inline-grid; place-items: center; flex: none; border: 1px solid rgba(100,214,200,.36); border-radius: 14px; color: var(--teal-soft); background: linear-gradient(145deg,rgba(100,214,200,.20),rgba(91,125,230,.18)); box-shadow: 0 10px 30px rgba(21,81,116,.25),0 0 24px rgba(100,214,200,.08) inset; transition: border-color var(--fast),background var(--fast),transform var(--normal) var(--ease); }
+.island-brand-icon img { width: 25px; height: 25px; object-fit: contain; filter: invert(88%) sepia(31%) saturate(583%) hue-rotate(117deg) brightness(96%) contrast(94%); }
 .island-brand:hover .island-brand-icon { transform: rotate(-4deg) scale(1.03); border-color: rgba(82,199,185,.38); background: rgba(82,199,185,.12); }
 .astra-mark { width: 20px; height: 20px; display: inline-grid; place-items:center; flex:none; padding: 3px; border: 1px solid rgba(100,214,200,.27); border-radius: 5px; background: linear-gradient(135deg,rgba(100,214,200,.13),rgba(83,112,207,.10)); }
 .astra-mark img { width:100%; height:100%; object-fit:contain; filter: invert(88%) sepia(31%) saturate(583%) hue-rotate(117deg) brightness(96%) contrast(94%); }
@@ -96,9 +96,14 @@ button { color: inherit; }
 /* hero */
 .hero { min-height: 790px; position: relative; display: grid; grid-template-columns: .78fr 1.22fr; gap: 72px; align-items: center; padding-block: 76px 70px; }
 .hero-copy { position: relative; z-index: 2; }
-.eyebrow { margin: 0 0 20px; color: #6d7a77; font: 500 10px 'IBM Plex Mono', monospace; letter-spacing: .14em; }
+.eyebrow { margin: 0 0 20px; color: #8ca1b9; font: 500 10px 'Geist Mono', monospace; letter-spacing: .14em; }
+.hero-brand { display:flex; align-items:center; gap:10px; margin-bottom:25px; color:#dffdf8; font:600 12px 'Geist Mono',monospace; letter-spacing:.18em; }
+.hero-brand-mark { width:36px; height:36px; display:grid; place-items:center; padding:6px; border:1px solid rgba(100,214,200,.45); border-radius:11px; background:linear-gradient(145deg,rgba(100,214,200,.22),rgba(69,102,202,.20)); box-shadow:0 10px 28px rgba(56,177,179,.16); }
+.hero-brand-mark img { width:100%; height:100%; object-fit:contain; filter:invert(88%) sepia(31%) saturate(583%) hue-rotate(117deg) brightness(96%) contrast(94%); }
+.hero-brand i { width:4px; height:4px; border-radius:50%; background:var(--teal); box-shadow:0 0 14px var(--teal); }
+.hero-brand small { color:#8fa1b4; font:500 9px 'Geist Mono',monospace; letter-spacing:.11em; }
 .live-dot { margin-right: 9px; vertical-align: 1px; }
-.hero h1,.section-intro h2,.demo-header h2,.trust-heading h2,.download-section h2 { margin: 0; font-size: clamp(52px,5.25vw,82px); line-height: .94; letter-spacing: -.065em; font-weight: 500; }
+.hero h1,.section-intro h2,.demo-header h2,.trust-heading h2,.download-section h2 { margin: 0; font-size: clamp(52px,5.25vw,82px); line-height: .94; letter-spacing: -.07em; font-weight: 600; }
 .hero h1 em,.download-section h2 em { color: var(--teal-soft); font-style: italic; font-weight: 500; }
 .lede { max-width: 560px; margin: 28px 0 32px; color: #aab6b3; font-size: 18px; line-height: 1.65; }
 .hero-actions { display: flex; align-items: center; gap: 25px; }
@@ -163,6 +168,24 @@ button { color: inherit; }
 /* docs and policies */
 .docs-page{min-height:100vh}.docs-page .nav{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
 .docs-layout{display:grid;grid-template-columns:210px minmax(0,700px);gap:82px;padding:85px 0 120px}.docs-layout aside{position:sticky;top:110px;align-self:start;color:#788582;font-size:13px}.docs-layout aside p{margin:0 0 8px;color:#4f5b58;font:8px 'IBM Plex Mono',monospace;letter-spacing:.1em}.docs-layout aside p:not(:first-child){margin-top:29px}.docs-layout aside a{display:block;padding:6px 0;transition:color var(--fast)}.docs-layout aside a:hover{color:var(--teal-soft)}.docs-layout article h1,.policy h1{margin:0;font-size:52px;letter-spacing:-.05em;font-weight:500}.docs-lede{max-width:680px;margin:22px 0 54px;color:#a8b3b0;font-size:18px;line-height:1.65}.docs-layout article h2,.policy h2{margin:46px 0 12px;font-size:24px;font-weight:500}.docs-layout article p,.docs-layout article li,.policy section p{color:#9ca8a5;font-size:15px;line-height:1.75}.docs-layout ul{padding-left:22px}.policy{width:min(800px,calc(100% - 56px));padding:85px 0 120px}.policy section{padding:26px 0;border-top:1px solid var(--line)}.policy section h2{margin:0 0 8px}.policy section p{margin:0}
+
+/* premium type and color system */
+.site-nav,.mega-menu,.mobile-menu,.window-chrome,.app-sidebar,.app-workspace,.demo-console,.trust-diagram,.download-section { background-color:#0c1320; }
+.site-nav { border-color:rgba(167,192,228,.16); box-shadow:0 20px 60px rgba(0,0,0,.42),0 1px 0 rgba(205,228,255,.07) inset; }
+.button { border-color:var(--teal); background:linear-gradient(135deg,#75e3d6,#56c8bb); color:#062622; font-weight:700; }
+.button:hover { background:linear-gradient(135deg,#b6f3ea,#75e3d6); box-shadow:0 15px 38px rgba(100,214,200,.20); }
+.lede,.section-intro>p:last-child,.demo-header>p,.trust-heading>p:not(.eyebrow),.docs-lede { color:#b4c3d4; }
+.principle-card { background:linear-gradient(145deg,rgba(17,27,43,.95),rgba(11,17,28,.92)); border-color:#26344a; }
+.principle-card:hover { border-color:#49647d; box-shadow:0 18px 50px rgba(0,0,0,.18); }
+.demo-section { background:#09101a; }
+.demo-console { border-color:#344862; box-shadow:0 30px 80px rgba(0,0,0,.36),0 0 80px rgba(45,97,156,.07); }
+.download-section { border-color:#375f69; background:linear-gradient(135deg,#0c1a2a,#0b1722 58%,#102334); }
+.trust-node,.provider-split>div { background:#101827; border-color:#2e4059; }
+.trust-node.astra { border-color:#477d80; box-shadow:0 0 40px rgba(100,214,200,.10); }
+.astra-mark { border-radius:7px; box-shadow:0 5px 16px rgba(61,167,166,.13); }
+
+/* All utility and telemetry labels use the dedicated mono face. */
+.nav-status,.mega-kicker,.mega-card-index,.eyebrow,.hero-proof,.window-chrome,.app-sidebar,.app-search kbd,.app-sidebar footer,.model-pill,.mini-label,.assessment small,.assessment em,.app-metric strong,.app-metric em,.notice-list i,.preview-caption,.signal-track,.card-index,.observation-visual::before,.observation-visual::after,.approval-visual>span,.approval-visual i,.scenario-list span,.diagnosis-query small,.diagnosis-answer small,.big-metric small,.big-metric strong,.big-metric span,.evidence-list span,.diagnosis footer,.agent-mark,.trust-node span,.trust-node b,.trust-path,.provider-split b,.download-signal,.site-footer>div>span,.site-footer>p,.docs-layout aside p,.hero-brand,.hero-brand small { font-family:'Geist Mono',monospace !important; }
 
 @media (max-width: 1080px) {
   .hero{grid-template-columns:1fr;gap:70px;padding-top:100px}.hero-copy{max-width:720px}.hero-product{width:850px;max-width:100%;margin-inline:auto}.desktop-window{width:100%}.section-intro,.demo-header{grid-template-columns:1fr;gap:25px}.section-intro>p:last-child,.demo-header>p{align-self:auto}.trust-section{gap:55px}.download-section{grid-template-columns:100px 1fr}.download-action{grid-column:2;text-align:left}.site-footer{grid-template-columns:2fr 1fr 1fr}.site-footer>p{grid-column:1/-1}

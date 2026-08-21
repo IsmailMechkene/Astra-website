@@ -45,7 +45,7 @@ export function HomeExperience() {
       <div className="hero-signal" aria-hidden="true"><span /><span /><span /></div>
       <div className="hero-logo-watermark" aria-hidden="true"><img src="/astra_logo.svg" alt="" /></div>
       <div className="hero-copy">
-        <p className="eyebrow hero-enter hero-enter-1"><span className="live-dot" />LOCAL SYSTEM INTELLIGENCE · WINDOWS</p>
+        <div className="hero-brand hero-enter hero-enter-1"><span className="hero-brand-mark"><img src="/astra_logo.svg" alt="" /></span><span>ASTRA</span><i /><small>LOCAL SYSTEM INTELLIGENCE</small></div>
         <h1 className="hero-enter hero-enter-2">Your PC is talking.<br /><em>Astra translates.</em></h1>
         <p className="lede hero-enter hero-enter-3">Ask a real question. Astra inspects the relevant signals on your machine and gives you a clear, evidence-backed answer—without taking control away from you.</p>
         <div className="hero-actions hero-enter hero-enter-4"><a className="button" href={releaseUrl}>Download for Windows <span>↓</span></a><a className="text-link" href="#demo">Run the demo <span>↘</span></a></div>
