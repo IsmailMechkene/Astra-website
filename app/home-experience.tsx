@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { type CSSProperties, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { SiteHeader } from "./site-header";
 
 const releaseUrl = process.env.NEXT_PUBLIC_ASTRA_DOWNLOAD_URL ?? "#download";
@@ -24,50 +24,25 @@ export function HomeExperience() {
     return () => observer.disconnect();
   }, []);
 
-  const movePreview = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const rect = event.currentTarget.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
-    const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
-    event.currentTarget.style.setProperty("--tilt-x", `${y * -1.4}deg`);
-    event.currentTarget.style.setProperty("--tilt-y", `${x * 2}deg`);
-  };
-  const resetPreview = (event: React.PointerEvent<HTMLDivElement>) => {
-    event.currentTarget.style.setProperty("--tilt-x", "0deg");
-    event.currentTarget.style.setProperty("--tilt-y", "0deg");
-  };
   const current = scenarios[scenario];
 
   return <main className="site-home">
     <SiteHeader />
 
-    <section className="hero shell">
+    <section className="hero hero-redesign shell">
       <div className="hero-signal" aria-hidden="true"><span /><span /><span /></div>
-      <div className="hero-logo-watermark" aria-hidden="true"><img src="/astra_logo.svg" alt="" /></div>
       <div className="hero-copy">
         <div className="hero-brand hero-enter hero-enter-1"><span className="hero-brand-mark"><img src="/astra_logo.svg" alt="" /></span><span>ASTRA</span><i /><small>LOCAL SYSTEM INTELLIGENCE</small></div>
-        <h1 className="hero-enter hero-enter-2">Your PC is talking.<br /><em>Astra translates.</em></h1>
-        <p className="lede hero-enter hero-enter-3">Ask a real question. Astra inspects the relevant signals on your machine and gives you a clear, evidence-backed answer—without taking control away from you.</p>
-        <div className="hero-actions hero-enter hero-enter-4"><a className="button" href={releaseUrl}>Download for Windows <span>↓</span></a><a className="text-link" href="#demo">Run the demo <span>↘</span></a></div>
-        <div className="hero-proof hero-enter hero-enter-5"><span>Windows 10 / 11</span><span>Read-only by default</span><span>Your AI, your choice</span></div>
+        <h1 className="hero-enter hero-enter-2">Understand your PC.</h1>
+        <p className="lede hero-enter hero-enter-3">Ask Astra what is happening. Get a clear answer grounded in live system evidence.</p>
+        <div className="hero-actions hero-enter hero-enter-4"><a className="button" href={releaseUrl}>Download for Windows <span>↓</span></a><a className="text-link" href="#demo">See how it works <span>↘</span></a></div>
+        <p className="hero-credibility hero-enter hero-enter-5">Read-only <i /> Local-first <i /> Windows 10/11</p>
       </div>
 
-      <div className="hero-product hero-enter hero-enter-4" onPointerMove={movePreview} onPointerLeave={resetPreview} style={{ "--tilt-x": "0deg", "--tilt-y": "0deg" } as CSSProperties}>
-        <div className="orbit orbit-one" /><div className="orbit orbit-two" />
-        <div className="desktop-window">
-          <div className="window-chrome"><span><Mark /> ASTRA</span><span className="window-online"><i /> LOCAL ONLINE</span><span className="window-controls">— · □ · ×</span></div>
-          <div className="window-layout">
-            <aside className="app-sidebar"><b><Mark /> ASTRA</b><small>SYSTEM INTELLIGENCE</small><div className="app-search">⌕ Search <kbd>⌘K</kbd></div><nav><span className="active">◉ Overview</span><span>▣ Conversation</span><span>▤ Processes</span><span>⌁ Performance</span><span>◇ Storage</span><span>⬡ Security</span></nav><footer><i /> Protected locally</footer></aside>
-            <div className="app-workspace"><div className="app-topline"><span>Overview<small>Live health and observations</small></span><span className="model-pill">qwen3:4b</span></div>
-              <div className="app-content"><p className="mini-label">SYSTEM OVERVIEW</p><h3>Good afternoon.</h3><p>Your system is stable. Astra is observing in read-only mode.</p>
-                <div className="assessment"><span className="pulse-glyph"><i /><i /><i /></span><div><small>ASTRA ASSESSMENT</small><b>No immediate issues need attention.</b></div><em>NORMAL</em></div>
-                <div className="metric-row"><Metric label="CPU" value="24%" bars={[3,4,4,6,9,7,11,8]} /><Metric label="MEMORY" value="68%" fill={68} /><Metric label="DISK" value="72%" fill={72} /><Metric label="NETWORK" value="18.4" detail="MBPS" /></div>
-                <div className="notice-list"><strong>Astra noticed</strong><span><i>01</i><b>Memory pressure</b><small>Within the expected range</small></span><span><i>02</i><b>Security</b><small>Protection is active</small></span></div>
-              </div>
-            </div>
-          </div>
-        </div><div className="preview-caption"><span>LIVE PRODUCT PREVIEW</span><span>Move cursor to inspect</span></div>
-      </div>
+      <figure className="hero-product-shot hero-enter hero-enter-4">
+        <img src="/hero.png" alt="Astra desktop application showing live PC vitals, local AI status, and natural-language system questions" />
+        <figcaption><span><i /> ACTUAL ASTRA INTERFACE</span><span>Local model · Read-only access</span></figcaption>
+      </figure>
     </section>
 
     <section className="signal-strip" aria-label="Astra product principles"><div className="signal-track"><span>READ THE SIGNALS</span><i /><span>EXPLAIN THE EVIDENCE</span><i /><span>ASK BEFORE ACTION</span><i /><span>KEEP A LOCAL AUDIT TRAIL</span><i /><span>READ THE SIGNALS</span></div></section>
@@ -83,7 +58,7 @@ export function HomeExperience() {
         <div className="diagnosis" key={scenario}><div className="diagnosis-query"><small>YOU ASKED</small><p>{current.question}</p></div><div className="diagnosis-answer"><div className="agent-mark">A</div><div><small>ASTRA · ANALYSIS COMPLETE</small><p>{current.answer}</p></div></div><div className="diagnosis-evidence"><div className="big-metric"><small>{current.metricLabel}</small><strong>{current.metric}</strong><span>LIVE READING</span></div><div className="evidence-list">{current.evidence.map((item) => <span key={item}>{item}<i /></span>)}</div></div><footer><span><i /> Read-only inspection complete</span><button onClick={() => setScenario((value) => (value + 1) % scenarios.length)}>Next diagnosis →</button></footer></div></div>
     </section>
 
-    <section className="trust-section shell" data-reveal><div className="trust-heading"><p className="eyebrow amber">YOUR MACHINE. YOUR BOUNDARIES.</p><h2>Local at the core.</h2><p>System readings happen on your device. You choose where reasoning happens—and Astra makes that boundary visible.</p><Link className="text-link" href="/policies">Read the trust model <span>→</span></Link></div>
+    <section id="trust" className="trust-section shell" data-reveal><div className="trust-heading"><p className="eyebrow amber">YOUR MACHINE. YOUR BOUNDARIES.</p><h2>Local at the core.</h2><p>System readings happen on your device. You choose where reasoning happens—and Astra makes that boundary visible.</p><Link className="text-link" href="/policies">Read the trust model <span>→</span></Link></div>
       <div className="trust-diagram"><div className="trust-node machine"><span>01</span><b>YOUR PC</b><small>Signals inspected locally</small></div><div className="trust-path"><i /><span>READ-ONLY</span><i /></div><div className="trust-node astra"><span>02</span><b>ASTRA</b><small>Context assembled locally</small></div><div className="provider-split"><div><i /><b>OLLAMA</b><small>On-device reasoning</small></div><div><i /><b>GROQ</b><small>Optional hosted reasoning</small></div></div></div>
     </section>
 
@@ -91,8 +66,4 @@ export function HomeExperience() {
 
     <footer className="site-footer shell"><div><Link className="brand" href="/"><Mark />ASTRA</Link><p>System intelligence for Windows.</p></div><div><span>PRODUCT</span><a href="#demo">Demo</a><Link href="/docs">Documentation</Link></div><div><span>TRUST</span><Link href="/policies">Policies</Link><Link href="/docs#privacy">Local diagnostics</Link></div><p>© {new Date().getFullYear()} ASTRA</p></footer>
   </main>;
-}
-
-function Metric({ label, value, fill, detail, bars }: { label: string; value: string; fill?: number; detail?: string; bars?: number[] }) {
-  return <div className="app-metric"><small>{label}</small><strong>{value}</strong>{detail && <em>{detail}</em>}{bars ? <span className="tiny-bars">{bars.map((height, index) => <i key={index} style={{ height: `${height}px` }} />)}</span> : <span className="tiny-meter"><i style={{ width: `${fill ?? 0}%` }} /></span>}</div>;
 }
