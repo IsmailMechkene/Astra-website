@@ -65,8 +65,18 @@ export function HomeExperience() {
       </ol>
     </section>
 
-    <section id="trust" className="trust-section trust-evidence shell" data-reveal><div className="trust-heading"><p className="eyebrow amber">YOUR MACHINE. YOUR BOUNDARIES.</p><h2>Privacy you can see.</h2><p>The provider choice, every readable system category, and the approval lock are explicit inside Astra—not buried in policy copy.</p><div className="trust-facts"><p><strong>Readings stay on your PC.</strong><span>System information is gathered and assembled locally.</span></p><p><strong>You choose the reasoning provider.</strong><span>Use Ollama on-device or connect Groq with your own key.</span></p><p><strong>Changes always need approval.</strong><span>Read-only is the default; action requires your confirmation.</span></p></div><Link className="text-link" href="/policies">Read the trust model <span>→</span></Link></div>
-      <figure className="evidence-screen privacy-screen"><img src="/Privacy_trust_section.png" width={1536} height={1024} loading="lazy" decoding="async" alt="Astra permissions screen showing Ollama and Groq provider choices, read-only system access, and confirmation controls" /><figcaption><span>ACTUAL PERMISSIONS SCREEN</span><p>The boundary is part of the product.</p></figcaption></figure>
+    <section id="trust" className="trust-section trust-text-only shell" data-reveal>
+      <div className="trust-editorial-lead">
+        <p className="eyebrow amber">LOCAL-FIRST BY DESIGN</p>
+        <h2>Your machine.<br />Your rules.</h2>
+        <p>Astra makes the privacy boundary obvious: what it can read, where reasoning happens, and when your approval is required.</p>
+        <Link className="text-link" href="/policies">Read the trust model <span>→</span></Link>
+      </div>
+      <div className="trust-guarantees">
+        <article><span>01 / LOCAL</span><div><h3>Readings stay on your PC.</h3><p>System information is gathered and assembled locally before reasoning begins.</p></div><em>ON DEVICE</em></article>
+        <article><span>02 / CHOICE</span><div><h3>You choose where reasoning runs.</h3><p>Use Ollama on-device, or connect Groq with an API key you control.</p></div><em>OLLAMA / GROQ</em></article>
+        <article><span>03 / CONTROL</span><div><h3>Nothing changes without you.</h3><p>Diagnostics are read-only. Any action must be shown and explicitly approved.</p></div><em>APPROVAL REQUIRED</em></article>
+      </div>
     </section>
 
     <section id="download" className="download-section download-proof shell" data-reveal>
