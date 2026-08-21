@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const minimumDisplayTime = 480;
-const maximumWaitTime = 6000;
+const introStorageKey = "astra:intro-seen";
+const introDisplayTime = 2000;
 
 function waitForImage(image: HTMLImageElement) {
   const loaded = image.complete
@@ -29,6 +29,23 @@ export function SiteLoader() {
 
   useEffect(() => {
     let active = true;
+
+    try {
+      if (window.sessionStorage.getItem(introStorageKey) === "1") {
+        document.documentElement.classList.remove("astra-loading");
+        const hideImmediately = window.setTimeout(() => {
+          if (active) setVisible(false);
+        }, 0);
+        return () => {
+          active = false;
+          window.clearTimeout(hideImmediately);
+        };
+      }
+      window.sessionStorage.setItem(introStorageKey, "1");
+    } catch {
+      // The intro still works when browser storage is unavailable.
+    }
+
     const startedAt = performance.now();
     document.documentElement.classList.add("astra-loading");
 
@@ -37,10 +54,10 @@ export function SiteLoader() {
     );
     const fontsReady = document.fonts?.ready ?? Promise.resolve();
     const assetsReady = Promise.all([fontsReady, ...criticalImages.map(waitForImage)]);
-    const safetyTimeout = new Promise<void>((resolve) => window.setTimeout(resolve, maximumWaitTime));
+    const introTimeout = new Promise<void>((resolve) => window.setTimeout(resolve, introDisplayTime));
 
-    Promise.race([assetsReady, safetyTimeout]).then(() => {
-      const remaining = Math.max(0, minimumDisplayTime - (performance.now() - startedAt));
+    Promise.race([assetsReady, introTimeout]).then(() => {
+      const remaining = Math.max(0, introDisplayTime - (performance.now() - startedAt));
       window.setTimeout(() => {
         if (active) setReady(true);
       }, remaining);

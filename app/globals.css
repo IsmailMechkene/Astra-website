@@ -35,6 +35,7 @@ button { color: inherit; }
 .site-home { overflow: clip; }
 html.astra-loading,html.astra-loading body { overflow:hidden; }
 .site-loader { position:fixed; z-index:1000; inset:0; display:grid; place-items:center; overflow:hidden; background:radial-gradient(circle at 50% 42%,rgba(25,77,102,.34),transparent 33%),linear-gradient(145deg,#07101b 0%,#091421 56%,#07101a 100%); opacity:1; visibility:visible; transition:opacity .65s var(--ease),visibility .65s; }
+.astra-skip-intro .site-loader { display:none; }
 .site-loader::before,.site-loader::after { content:""; position:absolute; pointer-events:none; }
 .site-loader::before { inset:0; opacity:.22; background-image:linear-gradient(rgba(100,214,200,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(100,214,200,.055) 1px,transparent 1px); background-size:72px 72px; mask-image:radial-gradient(circle at center,#000 0%,transparent 70%); }
 .site-loader::after { left:8vw; right:8vw; top:50%; height:1px; background:linear-gradient(90deg,transparent,rgba(100,214,200,.18),transparent); }

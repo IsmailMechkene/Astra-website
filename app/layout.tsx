@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: `try{if(sessionStorage.getItem("astra:intro-seen")==="1")document.documentElement.classList.add("astra-skip-intro")}catch{}` }} /></head><body>{children}</body></html>;
 }
