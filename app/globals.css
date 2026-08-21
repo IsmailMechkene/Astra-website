@@ -231,3 +231,37 @@ button { color: inherit; }
   .hero-product-shot { width:760px; margin-bottom:-34px; }
   .hero-product-shot figcaption { display:none; }
 }
+
+/* real product evidence */
+.product-proof-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid #314159; border-bottom:1px solid #1d2a3d; }
+.product-proof-grid article { min-height:220px; padding:34px 32px 38px; border-right:1px solid #1d2a3d; }
+.product-proof-grid article:last-child { border-right:0; }
+.product-proof-grid span,.evidence-screen figcaption span { color:#68d7ca; font:500 9px 'Geist Mono',monospace; letter-spacing:.12em; }
+.product-proof-grid h3 { margin:58px 0 11px; font-size:24px; font-weight:600; letter-spacing:-.035em; }
+.product-proof-grid p { max-width:310px; margin:0; color:#8fa0b3; font-size:14px; line-height:1.7; }
+.product-evidence-section { overflow:hidden; }
+.evidence-screen { position:relative; margin-top:0; margin-bottom:0; }
+.evidence-screen::before { content:""; position:absolute; z-index:-1; inset:12% 10% 8%; border-radius:40%; background:rgba(38,138,178,.16); filter:blur(100px); }
+.evidence-screen img { display:block; width:100%; height:auto; }
+.evidence-screen figcaption { width:87%; margin:-12px auto 0; display:flex; align-items:center; justify-content:space-between; gap:30px; }
+.evidence-screen figcaption p { margin:0; color:#72869b; font:500 10px 'Geist Mono',monospace; }
+.diagnosis-screen { width:min(1380px,calc(100vw - 32px)); }
+.trust-evidence { grid-template-columns:.68fr 1.32fr; gap:64px; }
+.trust-points { display:flex; flex-direction:column; gap:10px; margin:28px 0 30px; }
+.trust-points span { display:flex; align-items:center; gap:10px; color:#8fa2b6; font-size:13px; }
+.trust-points span::before { content:""; width:5px; height:5px; flex:none; border-radius:50%; background:var(--teal); box-shadow:0 0 9px rgba(100,214,200,.45); }
+.privacy-screen { width:760px; max-width:100%; }
+.privacy-screen figcaption { width:88%; }
+
+@media (max-width:760px) {
+  .product-proof-grid { grid-template-columns:1fr; }
+  .product-proof-grid article { min-height:0; padding:28px 4px; border-right:0; border-bottom:1px solid #1d2a3d; }
+  .product-proof-grid article:last-child { border-bottom:0; }
+  .product-proof-grid h3 { margin:25px 0 8px; font-size:22px; }
+  .product-proof-grid p { max-width:none; }
+  .diagnosis-screen { width:720px; left:50%; transform:translateX(-50%); }
+  .evidence-screen figcaption { display:none; }
+  .trust-evidence { grid-template-columns:1fr; gap:42px; }
+  .trust-points { margin-bottom:27px; }
+  .privacy-screen { width:690px; max-width:none; left:50%; transform:translateX(-50%); }
+}

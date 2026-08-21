@@ -1,30 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { SiteHeader } from "./site-header";
 
 const releaseUrl = process.env.NEXT_PUBLIC_ASTRA_DOWNLOAD_URL ?? "#download";
 
-const scenarios = [
-  { label: "Memory pressure", question: "What is using all my memory?", answer: "Chrome and Docker account for 5.5 GB together. Memory pressure is elevated, but the system is still responsive.", metric: "68%", metricLabel: "MEMORY USED", evidence: ["Chrome · 3.1 GB", "Docker · 2.4 GB", "Available · 10.2 GB"] },
-  { label: "Slow startup", question: "Why does startup feel slow?", answer: "Four high-impact apps launch when you sign in. Disabling two optional launchers could reduce background work.", metric: "4", metricLabel: "HIGH IMPACT", evidence: ["Discord · 2.8s", "Steam · 2.2s", "Docker · 4.1s"] },
-  { label: "Security check", question: "Is this PC protected?", answer: "Windows Defender and Firewall are active. Security definitions are current and no immediate action is needed.", metric: "ON", metricLabel: "PROTECTION", evidence: ["Firewall · Active", "Defender · Active", "Definitions · Current"] },
-];
-
 function Mark() { return <span className="astra-mark" aria-hidden="true"><img src="/astra_logo.svg" alt="" /></span>; }
 
 export function HomeExperience() {
-  const [scenario, setScenario] = useState(0);
-
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>("[data-reveal]");
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible")), { threshold: 0.14 });
     elements.forEach((element) => observer.observe(element));
     return () => observer.disconnect();
   }, []);
-
-  const current = scenarios[scenario];
 
   return <main className="site-home">
     <SiteHeader />
@@ -47,19 +37,23 @@ export function HomeExperience() {
 
     <section className="signal-strip" aria-label="Astra product principles"><div className="signal-track"><span>READ THE SIGNALS</span><i /><span>EXPLAIN THE EVIDENCE</span><i /><span>ASK BEFORE ACTION</span><i /><span>KEEP A LOCAL AUDIT TRAIL</span><i /><span>READ THE SIGNALS</span></div></section>
 
-    <section id="product" className="product-story shell" data-reveal><div className="section-intro"><p className="eyebrow">A DIFFERENT KIND OF SYSTEM TOOL</p><h2>Clarity before cleanup.</h2><p>Astra does not open with a warning wall or a giant “fix everything” button. It starts with what is happening, why it matters, and what you can do next.</p></div>
-      <div className="principle-grid"><article className="principle-card card-large"><span className="card-index">01</span><div className="card-visual observation-visual"><i /><i /><i /><i /><i /><i /><i /><i /></div><h3>Observe the whole system</h3><p>CPU, memory, processes, storage, network, battery, updates, and security—organized around the question you asked.</p><a href="#demo">Explore a diagnosis <span>→</span></a></article>
-        <article className="principle-card"><span className="card-index">02</span><div className="explain-visual"><b>68%</b><span>Memory pressure</span><i /></div><h3>Explain, don’t alarm</h3><p>Technical evidence translated into a calm, useful answer.</p></article>
-        <article className="principle-card"><span className="card-index">03</span><div className="approval-visual"><span>PROPOSED ACTION</span><b>Review before anything runs.</b><div><i>Cancel</i><i>Approve</i></div></div><h3>Keep you in control</h3><p>Read-only by default. Explicit approval before any system change.</p></article></div>
+    <section id="product" className="product-story shell" data-reveal><div className="section-intro"><p className="eyebrow">THE SYSTEM, IN CONTEXT</p><h2>Evidence, not alerts.</h2><p>The overview keeps live vitals, active processes, storage pressure, and the selected AI provider visible while you ask questions.</p></div>
+      <div className="product-proof-grid">
+        <article><span>01</span><h3>Live readings</h3><p>CPU, memory, disk, uptime, and process activity stay visible beside the conversation.</p></article>
+        <article><span>02</span><h3>Named sources</h3><p>Every answer can show the local checks Astra used, rather than asking you to trust a score.</p></article>
+        <article><span>03</span><h3>Approval first</h3><p>Observation is read-only. Anything that changes Windows requires a clear confirmation.</p></article>
+      </div>
     </section>
 
-    <section id="demo" className="demo-section" data-reveal><div className="shell demo-header"><div><p className="eyebrow">INTERACTIVE DIAGNOSIS</p><h2>Ask naturally.<br />See the evidence.</h2></div><p>Choose a question to see how Astra turns scattered Windows signals into an answer you can act on.</p></div>
-      <div className="shell demo-console"><div className="scenario-list" role="tablist" aria-label="Diagnostic scenarios">{scenarios.map((item, index) => <button key={item.label} className={scenario === index ? "active" : ""} onClick={() => setScenario(index)} role="tab" aria-selected={scenario === index}><span>0{index + 1}</span><b>{item.label}</b><i>→</i></button>)}</div>
-        <div className="diagnosis" key={scenario}><div className="diagnosis-query"><small>YOU ASKED</small><p>{current.question}</p></div><div className="diagnosis-answer"><div className="agent-mark">A</div><div><small>ASTRA · ANALYSIS COMPLETE</small><p>{current.answer}</p></div></div><div className="diagnosis-evidence"><div className="big-metric"><small>{current.metricLabel}</small><strong>{current.metric}</strong><span>LIVE READING</span></div><div className="evidence-list">{current.evidence.map((item) => <span key={item}>{item}<i /></span>)}</div></div><footer><span><i /> Read-only inspection complete</span><button onClick={() => setScenario((value) => (value + 1) % scenarios.length)}>Next diagnosis →</button></footer></div></div>
+    <section id="demo" className="demo-section product-evidence-section" data-reveal><div className="shell demo-header"><div><p className="eyebrow">CONVERSATIONAL DIAGNOSIS</p><h2>Ask naturally.<br />Inspect the proof.</h2></div><p>Astra answers in plain language, then exposes the local readings behind that answer—source by source.</p></div>
+      <figure className="shell evidence-screen diagnosis-screen">
+        <img src="/Ask_naturally_section.png" loading="lazy" decoding="async" alt="Astra answering a system overview question and listing the six local read-only checks used" />
+        <figcaption><span>REAL ASTRA CONVERSATION</span><p>Six local reads. One direct answer. The reasoning boundary stays visible.</p></figcaption>
+      </figure>
     </section>
 
-    <section id="trust" className="trust-section shell" data-reveal><div className="trust-heading"><p className="eyebrow amber">YOUR MACHINE. YOUR BOUNDARIES.</p><h2>Local at the core.</h2><p>System readings happen on your device. You choose where reasoning happens—and Astra makes that boundary visible.</p><Link className="text-link" href="/policies">Read the trust model <span>→</span></Link></div>
-      <div className="trust-diagram"><div className="trust-node machine"><span>01</span><b>YOUR PC</b><small>Signals inspected locally</small></div><div className="trust-path"><i /><span>READ-ONLY</span><i /></div><div className="trust-node astra"><span>02</span><b>ASTRA</b><small>Context assembled locally</small></div><div className="provider-split"><div><i /><b>OLLAMA</b><small>On-device reasoning</small></div><div><i /><b>GROQ</b><small>Optional hosted reasoning</small></div></div></div>
+    <section id="trust" className="trust-section trust-evidence shell" data-reveal><div className="trust-heading"><p className="eyebrow amber">YOUR MACHINE. YOUR BOUNDARIES.</p><h2>Privacy you can see.</h2><p>The provider choice, every readable system category, and the approval lock are explicit inside Astra—not buried in policy copy.</p><div className="trust-points"><span>Local Ollama or hosted Groq</span><span>Read-only system categories</span><span>Confirmation locked on</span></div><Link className="text-link" href="/policies">Read the trust model <span>→</span></Link></div>
+      <figure className="evidence-screen privacy-screen"><img src="/Privacy_trust_section.png" loading="lazy" decoding="async" alt="Astra permissions screen showing Ollama and Groq provider choices, read-only system access, and confirmation controls" /><figcaption><span>ACTUAL PERMISSIONS SCREEN</span><p>The boundary is part of the product.</p></figcaption></figure>
     </section>
 
     <section id="download" className="download-section shell" data-reveal><div className="download-signal"><Mark /><span>READY WHEN YOU ARE</span></div><div><p className="eyebrow">ASTRA FOR WINDOWS</p><h2>Understand first.<br /><em>Then decide.</em></h2></div><div className="download-action"><a className="button" href={releaseUrl}>Download Astra <span>↓</span></a><p>Version 1.0.0 · Windows x64<br />Local diagnostics · Free download</p></div></section>
