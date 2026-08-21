@@ -5,6 +5,7 @@ import { ArrowDownRight, ArrowRight, ArrowUpRight, Code2, Download } from "lucid
 import { useEffect } from "react";
 import { astraRelease } from "./release";
 import { SiteHeader } from "./site-header";
+import { SiteLoader } from "./site-loader";
 
 function Mark() { return <span className="astra-mark" aria-hidden="true"><img src="/astra_logo.svg" alt="" /></span>; }
 
@@ -16,7 +17,7 @@ export function HomeExperience() {
     return () => observer.disconnect();
   }, []);
 
-  return <main className="site-home">
+  return <><SiteLoader /><main className="site-home">
     <SiteHeader />
 
     <section className="hero hero-redesign shell">
@@ -30,7 +31,7 @@ export function HomeExperience() {
       </div>
 
       <figure className="hero-product-shot hero-enter hero-enter-4">
-        <img src="/hero.png" width={1536} height={1024} alt="Astra desktop application showing live PC vitals, local AI status, and natural-language system questions" />
+        <img data-critical-image src="/hero.png" width={1536} height={1024} loading="eager" fetchPriority="high" alt="Astra desktop application showing live PC vitals, local AI status, and natural-language system questions" />
         <figcaption><span><i /> ACTUAL ASTRA INTERFACE</span><span>Local model · Read-only access</span></figcaption>
       </figure>
     </section>
@@ -96,5 +97,5 @@ export function HomeExperience() {
     </section>
 
     <footer className="site-footer shell"><div><Link className="brand" href="/"><Mark />ASTRA</Link><p>System intelligence for Windows.</p></div><div><span>PRODUCT</span><a href="#how">How it works</a><Link href="/docs">Documentation</Link></div><div><span>COMMUNITY</span><a href="https://github.com/IsmailMechkene/Astra" target="_blank" rel="noreferrer">GitHub</a><Link href="/docs#privacy">Trust & privacy</Link></div><p>© {new Date().getFullYear()} ASTRA</p></footer>
-  </main>;
+  </main></>;
 }
