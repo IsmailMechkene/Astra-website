@@ -394,3 +394,42 @@ button { color: inherit; }
   .trust-guarantees article>em { grid-column:2; padding-top:8px; }
   .trust-guarantees h3 { font-size:22px; }
 }
+
+/* restrained, full-width product navigation */
+.site-nav-wrap { height:84px; padding:0; background:rgba(7,12,20,.86); border-bottom:1px solid rgba(137,161,190,.14); backdrop-filter:blur(20px) saturate(135%); }
+.site-nav-shell { height:100%; }
+.professional-nav { width:100%; max-width:none; height:83px; padding:0; border:0; border-radius:0; background:transparent; box-shadow:none; backdrop-filter:none; }
+.professional-nav::before { display:none; }
+.astra-nav-brand { display:inline-flex; align-items:center; gap:12px; color:#edf4fb; }
+.astra-nav-brand img { width:29px; height:27px; display:block; object-fit:contain; filter:invert(86%) sepia(42%) saturate(466%) hue-rotate(116deg) brightness(100%) contrast(91%); }
+.astra-nav-brand span { font-family:'Instrument Sans',sans-serif; font-size:17px; font-weight:650; letter-spacing:.08em; }
+.professional-nav-links { position:absolute; left:50%; transform:translateX(-50%); gap:34px; color:#8fa0b2; }
+.professional-nav-links a { position:relative; height:83px; padding:0; border-radius:0; font-size:13px; font-weight:500; }
+.professional-nav-links a::after { content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:var(--teal); transform:scaleX(0); transform-origin:center; transition:transform var(--normal) var(--ease); }
+.professional-nav-links a:hover { color:#dbe7f2; background:transparent; }
+.professional-nav-links a:hover::after { transform:scaleX(1); }
+.nav-actions { gap:10px; }
+.nav-download { min-height:40px; display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:0 15px; border:1px solid rgba(100,214,200,.42); border-radius:5px; background:rgba(100,214,200,.055); color:#a7e6de; font-size:12px; font-weight:600; transition:color var(--fast),border-color var(--fast),background var(--fast); }
+.nav-download:hover { color:#e2fffb; border-color:rgba(100,214,200,.72); background:rgba(100,214,200,.10); }
+.nav-menu-toggle { border:0; border-radius:4px; background:transparent; color:#afbdca; }
+.nav-menu-toggle:hover { background:rgba(255,255,255,.05); color:#e6eef5; }
+
+@media (max-width:760px) {
+  .site-nav-wrap { height:72px; padding:0; }
+  .site-nav-shell { width:100%; }
+  .professional-nav { height:71px; padding:0 16px; border-radius:0; }
+  .professional-nav-links { display:none; }
+  .astra-nav-brand { gap:10px; }
+  .astra-nav-brand img { width:26px; height:24px; }
+  .astra-nav-brand span { font-size:16px; }
+  .nav-download { min-height:38px; padding-inline:13px; }
+  .nav-menu-toggle { display:grid; width:38px; height:38px; }
+  .simple-mobile-menu { top:71px; left:0; right:0; padding:14px 16px 18px; border:0; border-bottom:1px solid rgba(137,161,190,.15); border-radius:0; background:rgba(8,14,23,.98); box-shadow:0 24px 50px rgba(0,0,0,.35); }
+  .simple-mobile-menu a { min-height:47px; display:flex; align-items:center; padding:0; border-bottom:1px solid rgba(137,161,190,.10); color:#b1bfcd; }
+  .simple-mobile-menu a:last-child { border-bottom:0; }
+}
+
+@media (max-width:420px) {
+  .nav-download { width:38px; padding:0; }
+  .nav-download span { display:none; }
+}

@@ -28,13 +28,13 @@ export function SiteHeader() {
   return (
     <header className="site-nav-wrap" ref={headerRef}>
       <div className="site-nav-shell shell">
-        <nav className="site-nav simple-nav" aria-label="Main navigation">
-          <Link className="brand island-brand" href="/" aria-label="Astra home" onClick={close}>
-            <span className="island-brand-icon"><img src="/astra_logo.svg" alt="" /></span>
-            <span>ASTRA</span>
+        <nav className="site-nav professional-nav" aria-label="Main navigation">
+          <Link className="astra-nav-brand" href="/" aria-label="Astra home" onClick={close}>
+            <img src="/astra_logo.svg" alt="" />
+            <span>Astra</span>
           </Link>
 
-          <div className="nav-links simple-nav-links">
+          <div className="nav-links professional-nav-links">
             <Link href="/#how" onClick={close}>How it works</Link>
             <Link href="/#demo" onClick={close}>Demo</Link>
             <Link href="/#trust" onClick={close}>Trust</Link>
@@ -42,11 +42,11 @@ export function SiteHeader() {
           </div>
 
           <div className="nav-actions">
-            <a className="button button-small island-download" href={releaseUrl} onClick={close}>
+            <a className="nav-download" href={releaseUrl} onClick={close}>
               <Download size={15} strokeWidth={1.9} aria-hidden="true" /><span>Download</span>
             </a>
             <button
-              className="mobile-menu-toggle"
+              className="mobile-menu-toggle nav-menu-toggle"
               type="button"
               aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={mobileOpen}
