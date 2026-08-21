@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowLeft, ChevronDown, CornerDownRight, Download } from "lucide-react";
 import { SiteHeader } from "../site-header";
 import { DocsSidebar } from "./docs-sidebar";
 
@@ -60,7 +61,7 @@ export default function Docs() {
           </header>
 
           <details className="docs-mobile-toc">
-            <summary>On this page</summary>
+            <summary>On this page <ChevronDown size={16} strokeWidth={1.8} aria-hidden="true" /></summary>
             <div><a href="#quick-start">Quick start</a><a href="#providers">Providers</a><a href="#using-astra">Using Astra</a><a href="#capabilities">Capabilities</a><a href="#privacy">Privacy</a><a href="#troubleshooting">Troubleshooting</a><a href="#faq">FAQ</a></div>
           </details>
 
@@ -71,7 +72,7 @@ export default function Docs() {
 
           <section id="download" className="docs-section">
             <div className="docs-section-label"><span>02</span><p>DOWNLOAD</p></div>
-            <div className="docs-section-body"><h2>Download and verify.</h2><p>Only use an installer linked from the official Astra website. The first public release is unsigned, so Windows may identify its publisher as unknown.</p><div className="release-record"><div><span>INSTALLER</span><strong>Astra-Setup-1.0.0-x64.exe</strong></div><div><span>VERSION</span><strong>1.0.0</strong></div><div><span>SIZE</span><strong>109.3 MiB</strong></div><div><span>SIGNATURE</span><strong>Not signed</strong></div><div className="release-hash"><span>SHA-256</span><code>443C19C0309B03B04A03AC87A7CF8C52E3DE4DFAE78B8DAFCE2810487ABA7678</code></div></div><p>Calculate the file hash in PowerShell and compare every character with the value above:</p><CodeBlock>{"Get-FileHash .\\Astra-Setup-1.0.0-x64.exe -Algorithm SHA256"}</CodeBlock><div className="docs-note warning"><strong>Unsigned release</strong><p>If SmartScreen appears, confirm the official source and checksum before using its additional-information option to continue.</p></div><Link className="text-link" href="/#download">Go to download <span>→</span></Link></div>
+            <div className="docs-section-body"><h2>Download and verify.</h2><p>Only use an installer linked from the official Astra website. The first public release is unsigned, so Windows may identify its publisher as unknown.</p><div className="release-record"><div><span>INSTALLER</span><strong>Astra-Setup-1.0.0-x64.exe</strong></div><div><span>VERSION</span><strong>1.0.0</strong></div><div><span>SIZE</span><strong>109.3 MiB</strong></div><div><span>SIGNATURE</span><strong>Not signed</strong></div><div className="release-hash"><span>SHA-256</span><code>443C19C0309B03B04A03AC87A7CF8C52E3DE4DFAE78B8DAFCE2810487ABA7678</code></div></div><p>Calculate the file hash in PowerShell and compare every character with the value above:</p><CodeBlock>{"Get-FileHash .\\Astra-Setup-1.0.0-x64.exe -Algorithm SHA256"}</CodeBlock><div className="docs-note warning"><strong>Unsigned release</strong><p>If SmartScreen appears, confirm the official source and checksum before using its additional-information option to continue.</p></div><Link className="text-link" href="/#download">Go to download <Download size={15} strokeWidth={1.8} aria-hidden="true" /></Link></div>
           </section>
 
           <section id="requirements" className="docs-section">
@@ -106,7 +107,7 @@ export default function Docs() {
 
           <section id="prompts" className="docs-section">
             <div className="docs-section-label"><span>09</span><p>PROMPTS</p></div>
-            <div className="docs-section-body"><h2>Questions worth asking.</h2><div className="prompt-grid">{promptGroups.map(([title, prompts]) => <article key={title}><span>{title}</span><ul>{prompts.map(prompt => <li key={prompt}>{prompt}</li>)}</ul></article>)}</div><div className="docs-note"><strong>Prompt with evidence in mind</strong><p>Describe the symptom, include timing and scope, and ask which readings support the conclusion. Ask one main diagnostic question at a time.</p></div></div>
+            <div className="docs-section-body"><h2>Questions worth asking.</h2><div className="prompt-grid">{promptGroups.map(([title, prompts]) => <article key={title}><span>{title}</span><ul>{prompts.map(prompt => <li key={prompt}><CornerDownRight size={13} strokeWidth={1.7} aria-hidden="true" />{prompt}</li>)}</ul></article>)}</div><div className="docs-note"><strong>Prompt with evidence in mind</strong><p>Describe the symptom, include timing and scope, and ask which readings support the conclusion. Ask one main diagnostic question at a time.</p></div></div>
           </section>
 
           <section id="capabilities" className="docs-section">
@@ -126,7 +127,7 @@ export default function Docs() {
 
           <section id="troubleshooting" className="docs-section">
             <div className="docs-section-label"><span>13</span><p>TROUBLESHOOTING</p></div>
-            <div className="docs-section-body"><h2>Resolve common problems.</h2><div className="troubleshooting-list">{troubleshooting.map(([title, answer]) => <details key={title}><summary>{title}<span>+</span></summary><p>{answer}</p></details>)}</div></div>
+            <div className="docs-section-body"><h2>Resolve common problems.</h2><div className="troubleshooting-list">{troubleshooting.map(([title, answer]) => <details key={title}><summary>{title}<ChevronDown size={18} strokeWidth={1.8} aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></div>
           </section>
 
           <section id="uninstall" className="docs-section">
@@ -139,7 +140,7 @@ export default function Docs() {
             <div className="docs-section-body"><h2>Frequently asked questions.</h2><div className="faq-grid"><article><h3>Is Astra an antivirus?</h3><p>No. It explains Windows-reported security status but does not replace Microsoft Defender or another security product.</p></article><article><h3>Does Astra repair problems?</h3><p>No. Version 1.0.0 is read-only. It diagnoses and explains; it does not clean, repair, terminate, disable, install, or restart.</p></article><article><h3>Does it need administrator access?</h3><p>Normal use is designed for a standard account. Windows may withhold some readings, which Astra should report as unavailable.</p></article><article><h3>Can it work offline?</h3><p>Yes, after Ollama and <code>qwen3:4b</code> are downloaded. Groq always requires internet.</p></article><article><h3>Does Astra upload all system data?</h3><p>No. Ollama keeps prompts and evidence local. Groq receives the prompt and only the readings selected for reasoning.</p></article><article><h3>Can Astra delete large files?</h3><p>No. It identifies candidates for review. A large or old file is not automatically safe to delete.</p></article><article><h3>Can I choose another model?</h3><p>Not in version 1.0.0. The configured Ollama and Groq models are fixed.</p></article><article><h3>Why is the publisher unknown?</h3><p>The first release is not code-signed. Verify the official source and checksum before installation.</p></article></div></div>
           </section>
 
-          <footer className="docs-footer"><div><span>ASTRA 1.0.0</span><p>Windows system intelligence, grounded in evidence.</p></div><Link href="/">Return home <span>→</span></Link></footer>
+          <footer className="docs-footer"><div><span>ASTRA 1.0.0</span><p>Windows system intelligence, grounded in evidence.</p></div><Link href="/"><ArrowLeft size={14} strokeWidth={1.8} aria-hidden="true" />Return home</Link></footer>
         </article>
       </div>
     </main>

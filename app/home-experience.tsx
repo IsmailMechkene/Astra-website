@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Code2 } from "lucide-react";
+import { ArrowDownRight, ArrowRight, ArrowUpRight, Code2, Download } from "lucide-react";
 import { useEffect } from "react";
 import { SiteHeader } from "./site-header";
 
@@ -26,7 +26,7 @@ export function HomeExperience() {
         <div className="hero-brand hero-enter hero-enter-1"><span className="hero-brand-mark"><img src="/astra_logo.svg" alt="" /></span><span>ASTRA</span><i /><small>LOCAL SYSTEM INTELLIGENCE</small></div>
         <h1 className="hero-enter hero-enter-2">Understand your PC.</h1>
         <p className="lede hero-enter hero-enter-3">Ask Astra what is happening. Get a clear answer grounded in live system evidence.</p>
-        <div className="hero-actions hero-enter hero-enter-4"><a className="button" href={releaseUrl}>Download for Windows <span>↓</span></a><a className="text-link" href="#how">See how it works <span>↘</span></a></div>
+        <div className="hero-actions hero-enter hero-enter-4"><a className="button" href={releaseUrl}>Download for Windows <Download size={15} strokeWidth={1.9} aria-hidden="true" /></a><a className="text-link" href="#how">See how it works <ArrowDownRight size={15} strokeWidth={1.8} aria-hidden="true" /></a></div>
         <p className="hero-credibility hero-enter hero-enter-5">Read-only <i /> Local-first <i /> Windows 10/11</p>
       </div>
 
@@ -71,7 +71,7 @@ export function HomeExperience() {
         <p className="eyebrow amber">TRUST BY INSPECTION</p>
         <h2>Clear boundaries.<br />Verifiable behavior.</h2>
         <p>Astra does not ask for blind trust. Its access model, provider boundary, credential storage, and current limitations are documented plainly.</p>
-        <div className="trust-links"><Link className="text-link" href="/docs#privacy">Privacy & security <span>→</span></Link><a className="text-link secondary" href="https://github.com/IsmailMechkene/Astra" target="_blank" rel="noreferrer">Inspect the source <span>↗</span></a></div>
+        <div className="trust-links"><Link className="text-link" href="/docs#privacy">Privacy & security <ArrowRight size={15} strokeWidth={1.8} aria-hidden="true" /></Link><a className="text-link secondary" href="https://github.com/IsmailMechkene/Astra" target="_blank" rel="noreferrer">Inspect the source <ArrowUpRight size={15} strokeWidth={1.8} aria-hidden="true" /></a></div>
       </div>
       <div className="trust-guarantees">
         <article><span>01 / ACCESS</span><div><h3>Diagnostics observe. They do not act.</h3><p>Astra 1.0.0 reads system evidence. It does not delete files, end processes, change settings, or install updates.</p></div><em>READ-ONLY</em></article>
@@ -82,17 +82,17 @@ export function HomeExperience() {
     </section>
 
     <section id="opensource" className="open-source-section shell" data-reveal>
-      <div className="open-source-intro"><p className="eyebrow">OPEN SOURCE / COMMUNITY</p><h2>Astra is built<br />in public.</h2><p>The repository is public on GitHub. Read how Astra works, report a reproducible problem, or propose a focused improvement.</p><div className="open-source-actions"><a className="oss-primary" href="https://github.com/IsmailMechkene/Astra" target="_blank" rel="noreferrer"><Code2 size={17} aria-hidden="true" />View repository<ArrowUpRight size={15} aria-hidden="true" /></a><a className="text-link" href="https://github.com/IsmailMechkene/Astra/issues" target="_blank" rel="noreferrer">Report an issue <span>↗</span></a></div></div>
+      <div className="open-source-intro"><p className="eyebrow">OPEN SOURCE / COMMUNITY</p><h2>Astra is built<br />in public.</h2><p>The repository is public on GitHub. Read how Astra works, report a reproducible problem, or propose a focused improvement.</p><div className="open-source-actions"><a className="oss-primary" href="https://github.com/IsmailMechkene/Astra" target="_blank" rel="noreferrer"><Code2 size={17} aria-hidden="true" />View repository<ArrowUpRight size={15} aria-hidden="true" /></a><a className="text-link" href="https://github.com/IsmailMechkene/Astra/issues" target="_blank" rel="noreferrer">Report an issue <ArrowUpRight size={15} strokeWidth={1.8} aria-hidden="true" /></a></div></div>
       <div className="contribution-list"><article><span>01 / INSPECT</span><div><h3>Read the implementation.</h3><p>Review the desktop frontend, diagnostic backend, and experiments directly in the public repository.</p></div></article><article><span>02 / REPORT</span><div><h3>Bring reproducible evidence.</h3><p>Open an issue with the Astra version, Windows version, exact symptom, and the relevant diagnostic output.</p></div></article><article><span>03 / CONTRIBUTE</span><div><h3>Propose one focused change.</h3><p>Improve a diagnostic, clarify documentation, strengthen privacy, or make the interface more accessible.</p></div></article></div>
       <a className="repository-signature" href="https://github.com/IsmailMechkene/Astra" target="_blank" rel="noreferrer"><span><Code2 size={16} aria-hidden="true" />github.com/IsmailMechkene/Astra</span><span>PUBLIC REPOSITORY <ArrowUpRight size={14} aria-hidden="true" /></span></a>
     </section>
 
     <section id="download" className="download-section download-proof shell" data-reveal>
-      <div className="download-top"><div><p className="eyebrow">ASTRA FOR WINDOWS</p><h2>Understand first.<br /><em>Then decide.</em></h2></div><div className="download-action"><a className="button" href={releaseUrl}>Download Astra <span>↓</span></a><p>Version 1.0.0 · Windows x64 · Free</p></div></div>
+      <div className="download-top"><div><p className="eyebrow">ASTRA FOR WINDOWS</p><h2>Understand first.<br /><em>Then decide.</em></h2></div><div className="download-action"><a className="button" href={releaseUrl}>Download Astra <Download size={16} strokeWidth={1.9} aria-hidden="true" /></a><p>Version 1.0.0 · Windows x64 · Free</p></div></div>
       <div className="download-details">
         <article><span>LATEST RELEASE</span><h3>Version 1.0.0</h3><ul><li>Natural-language system diagnosis</li><li>Local evidence attached to answers</li><li>Ollama and Groq provider choice</li></ul></article>
         <article><span>SYSTEM REQUIREMENTS</span><h3>Windows desktop</h3><ul><li>Windows 10 or Windows 11</li><li>64-bit processor</li><li>Ollama optional for local reasoning</li></ul></article>
-        <article className="security-reassurance"><span>SECURITY REASSURANCE</span><h3>Nothing changes silently.</h3><p>Diagnostics are read-only. Any future action that modifies Windows must be shown to you and explicitly approved first.</p><Link href="/policies">Review the trust model <b>→</b></Link></article>
+        <article className="security-reassurance"><span>SECURITY REASSURANCE</span><h3>Nothing changes silently.</h3><p>Diagnostics are read-only. Any future action that modifies Windows must be shown to you and explicitly approved first.</p><Link href="/policies">Review the trust model <ArrowRight size={14} strokeWidth={1.8} aria-hidden="true" /></Link></article>
       </div>
     </section>
 
