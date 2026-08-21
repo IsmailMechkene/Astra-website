@@ -23,11 +23,10 @@ export function HomeExperience() {
     <section className="hero hero-redesign shell">
       <div className="hero-signal" aria-hidden="true"><span /><span /><span /></div>
       <div className="hero-copy">
-        <div className="hero-brand hero-enter hero-enter-1"><span className="hero-brand-mark"><img src="/astra_logo.svg" alt="" /></span><span>ASTRA</span><i /><small>LOCAL SYSTEM INTELLIGENCE</small></div>
-        <h1 className="hero-enter hero-enter-2">Understand your PC.</h1>
-        <p className="lede hero-enter hero-enter-3">Ask Astra what is happening. Get a clear answer grounded in live system evidence.</p>
-        <div className="hero-actions hero-enter hero-enter-4"><a className="button" href={astraRelease.downloadUrl}>Download for Windows <Download size={15} strokeWidth={1.9} aria-hidden="true" /></a><a className="text-link" href="#how">See how it works <ArrowDownRight size={15} strokeWidth={1.8} aria-hidden="true" /></a></div>
-        <p className="hero-credibility hero-enter hero-enter-5">Read-only <i /> Local-first <i /> Windows 10/11</p>
+        <h1 className="hero-enter hero-enter-1">Your PC, explained.</h1>
+        <p className="lede hero-enter hero-enter-2">Ask what&apos;s happening. Astra gives you a clear answer grounded in live, read-only system evidence.</p>
+        <div className="hero-actions hero-enter hero-enter-3"><a className="button" href={astraRelease.downloadUrl}>Download Astra <Download size={15} strokeWidth={1.9} aria-hidden="true" /></a><a className="text-link" href="#evidence">See the evidence <ArrowDownRight size={15} strokeWidth={1.8} aria-hidden="true" /></a></div>
+        <p className="hero-credibility hero-enter hero-enter-4">Read-only <i /> Local-first <i /> Windows 10/11</p>
       </div>
 
       <figure className="hero-product-shot hero-enter hero-enter-4">

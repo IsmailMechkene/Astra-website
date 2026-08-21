@@ -119,11 +119,6 @@ html.astra-loading,html.astra-loading body { overflow:hidden; }
 .hero { min-height: 790px; position: relative; display: grid; grid-template-columns: .78fr 1.22fr; gap: 72px; align-items: center; padding-block: 76px 70px; }
 .hero-copy { position: relative; z-index: 2; }
 .eyebrow { margin: 0 0 20px; color: #8ca1b9; font: 500 10px 'Geist Mono', monospace; letter-spacing: .14em; }
-.hero-brand { display:flex; align-items:center; gap:10px; margin-bottom:25px; color:#dffdf8; font:600 12px 'Geist Mono',monospace; letter-spacing:.18em; }
-.hero-brand-mark { width:36px; height:36px; display:grid; place-items:center; padding:6px; border:1px solid rgba(100,214,200,.45); border-radius:11px; background:linear-gradient(145deg,rgba(100,214,200,.22),rgba(69,102,202,.20)); box-shadow:0 10px 28px rgba(56,177,179,.16); }
-.hero-brand-mark img { width:100%; height:100%; object-fit:contain; filter:invert(88%) sepia(31%) saturate(583%) hue-rotate(117deg) brightness(96%) contrast(94%); }
-.hero-brand i { width:4px; height:4px; border-radius:50%; background:var(--teal); box-shadow:0 0 14px var(--teal); }
-.hero-brand small { color:#8fa1b4; font:500 9px 'Geist Mono',monospace; letter-spacing:.11em; }
 .live-dot { margin-right: 9px; vertical-align: 1px; }
 .hero h1,.section-intro h2,.demo-header h2,.trust-heading h2,.download-section h2 { margin: 0; font-size: clamp(52px,5.25vw,82px); line-height: .94; letter-spacing: -.07em; font-weight: 600; }
 .hero h1 em,.download-section h2 em { color: var(--teal-soft); font-style: italic; font-weight: 500; }
@@ -207,7 +202,7 @@ html.astra-loading,html.astra-loading body { overflow:hidden; }
 .astra-mark { border-radius:7px; box-shadow:0 5px 16px rgba(61,167,166,.13); }
 
 /* All utility and telemetry labels use the dedicated mono face. */
-.nav-status,.mega-kicker,.mega-card-index,.eyebrow,.hero-proof,.window-chrome,.app-sidebar,.app-search kbd,.app-sidebar footer,.model-pill,.mini-label,.assessment small,.assessment em,.app-metric strong,.app-metric em,.notice-list i,.preview-caption,.signal-track,.card-index,.observation-visual::before,.observation-visual::after,.approval-visual>span,.approval-visual i,.scenario-list span,.diagnosis-query small,.diagnosis-answer small,.big-metric small,.big-metric strong,.big-metric span,.evidence-list span,.diagnosis footer,.agent-mark,.trust-node span,.trust-node b,.trust-path,.provider-split b,.download-signal,.site-footer>div>span,.site-footer>p,.docs-layout aside p,.hero-brand,.hero-brand small { font-family:'Geist Mono',monospace !important; }
+.nav-status,.mega-kicker,.mega-card-index,.eyebrow,.hero-proof,.window-chrome,.app-sidebar,.app-search kbd,.app-sidebar footer,.model-pill,.mini-label,.assessment small,.assessment em,.app-metric strong,.app-metric em,.notice-list i,.preview-caption,.signal-track,.card-index,.observation-visual::before,.observation-visual::after,.approval-visual>span,.approval-visual i,.scenario-list span,.diagnosis-query small,.diagnosis-answer small,.big-metric small,.big-metric strong,.big-metric span,.evidence-list span,.diagnosis footer,.agent-mark,.trust-node span,.trust-node b,.trust-path,.provider-split b,.download-signal,.site-footer>div>span,.site-footer>p,.docs-layout aside p { font-family:'Geist Mono',monospace !important; }
 
 @media (max-width: 1080px) {
   .hero{grid-template-columns:1fr;gap:70px;padding-top:100px}.hero-copy{max-width:720px}.hero-product{width:850px;max-width:100%;margin-inline:auto}.desktop-window{width:100%}.section-intro,.demo-header{grid-template-columns:1fr;gap:25px}.section-intro>p:last-child,.demo-header>p{align-self:auto}.trust-section{gap:55px}.download-section{grid-template-columns:100px 1fr}.download-action{grid-column:2;text-align:left}.site-footer{grid-template-columns:2fr 1fr 1fr}.site-footer>p{grid-column:1/-1}
@@ -225,7 +220,6 @@ html.astra-loading,html.astra-loading body { overflow:hidden; }
 .simple-nav-links a { padding-inline:17px; }
 .hero-redesign { min-height:0; display:flex; flex-direction:column; gap:54px; padding:82px 0 0; text-align:center; }
 .hero-redesign .hero-copy { width:min(820px,100%); margin-inline:auto; display:flex; flex-direction:column; align-items:center; }
-.hero-redesign .hero-brand { margin-bottom:24px; }
 .hero-redesign h1 { max-width:900px; font-size:clamp(64px,7.2vw,108px); line-height:.9; letter-spacing:-.075em; }
 .hero-redesign .lede { max-width:680px; margin:27px auto 30px; color:#b7c6d8; font-size:clamp(17px,1.55vw,21px); line-height:1.55; }
 .hero-redesign .hero-actions { justify-content:center; }
@@ -250,7 +244,6 @@ html.astra-loading,html.astra-loading body { overflow:hidden; }
   .hero-redesign .lede { margin:22px auto 27px; font-size:17px; }
   .hero-redesign .hero-actions { align-items:center; }
   .hero-credibility { gap:8px; font-size:8px; }
-  .hero-brand small,.hero-brand i { display:none; }
   .hero-product-shot { width:760px; margin-bottom:-34px; }
   .hero-product-shot figcaption { display:none; }
 }
