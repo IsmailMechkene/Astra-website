@@ -35,7 +35,7 @@ export function SiteHeader() {
           </Link>
 
           <div className="nav-links simple-nav-links">
-            <Link href="/#product" onClick={close}>Product</Link>
+            <Link href="/#how" onClick={close}>How it works</Link>
             <Link href="/#demo" onClick={close}>Demo</Link>
             <Link href="/#trust" onClick={close}>Trust</Link>
             <Link href="/docs" onClick={close}>Docs</Link>
@@ -58,7 +58,7 @@ export function SiteHeader() {
         </nav>
 
         <div className={`mobile-menu simple-mobile-menu${mobileOpen ? " is-open" : ""}`} aria-hidden={!mobileOpen}>
-          <Link href="/#product" onClick={close}>Product</Link>
+          <Link href="/#how" onClick={close}>How it works</Link>
           <Link href="/#demo" onClick={close}>Demo</Link>
           <Link href="/#trust" onClick={close}>Trust</Link>
           <Link href="/docs" onClick={close}>Documentation</Link>
