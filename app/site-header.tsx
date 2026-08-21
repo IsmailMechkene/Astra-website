@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { Download, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-
-const releaseUrl = process.env.NEXT_PUBLIC_ASTRA_DOWNLOAD_URL ?? "#download";
+import { astraRelease } from "./release";
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -42,7 +41,7 @@ export function SiteHeader() {
           </div>
 
           <div className="nav-actions">
-            <a className="nav-download" href={releaseUrl} onClick={close}>
+            <a className="nav-download" href={astraRelease.downloadUrl} onClick={close}>
               <Download size={15} strokeWidth={1.9} aria-hidden="true" /><span>Download</span>
             </a>
             <button

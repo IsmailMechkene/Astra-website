@@ -338,6 +338,8 @@ button { color: inherit; }
 .download-top { position:relative; z-index:1; display:grid; grid-template-columns:1fr auto; gap:80px; align-items:end; }
 .download-proof .download-action { text-align:right; }
 .download-proof .download-action p { color:#74899e; font-size:9px; }
+.release-notes-link { margin-top:15px; display:inline-flex; align-items:center; gap:7px; color:#86a9b4; font:500 9px 'Geist Mono',monospace; letter-spacing:.06em; transition:color var(--fast); }
+.release-notes-link:hover { color:#bceee8; }
 .download-details { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr 1.25fr; margin-top:80px; border-top:1px solid #294053; }
 .download-details article { min-height:285px; padding:34px 34px 26px 0; }
 .download-details article+article { padding-left:34px; border-left:1px solid #203044; }

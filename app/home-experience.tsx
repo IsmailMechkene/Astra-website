@@ -3,9 +3,8 @@
 import Link from "next/link";
 import { ArrowDownRight, ArrowRight, ArrowUpRight, Code2, Download } from "lucide-react";
 import { useEffect } from "react";
+import { astraRelease } from "./release";
 import { SiteHeader } from "./site-header";
-
-const releaseUrl = process.env.NEXT_PUBLIC_ASTRA_DOWNLOAD_URL ?? "#download";
 
 function Mark() { return <span className="astra-mark" aria-hidden="true"><img src="/astra_logo.svg" alt="" /></span>; }
 
@@ -26,7 +25,7 @@ export function HomeExperience() {
         <div className="hero-brand hero-enter hero-enter-1"><span className="hero-brand-mark"><img src="/astra_logo.svg" alt="" /></span><span>ASTRA</span><i /><small>LOCAL SYSTEM INTELLIGENCE</small></div>
         <h1 className="hero-enter hero-enter-2">Understand your PC.</h1>
         <p className="lede hero-enter hero-enter-3">Ask Astra what is happening. Get a clear answer grounded in live system evidence.</p>
-        <div className="hero-actions hero-enter hero-enter-4"><a className="button" href={releaseUrl}>Download for Windows <Download size={15} strokeWidth={1.9} aria-hidden="true" /></a><a className="text-link" href="#how">See how it works <ArrowDownRight size={15} strokeWidth={1.8} aria-hidden="true" /></a></div>
+        <div className="hero-actions hero-enter hero-enter-4"><a className="button" href={astraRelease.downloadUrl}>Download for Windows <Download size={15} strokeWidth={1.9} aria-hidden="true" /></a><a className="text-link" href="#how">See how it works <ArrowDownRight size={15} strokeWidth={1.8} aria-hidden="true" /></a></div>
         <p className="hero-credibility hero-enter hero-enter-5">Read-only <i /> Local-first <i /> Windows 10/11</p>
       </div>
 
@@ -88,9 +87,9 @@ export function HomeExperience() {
     </section>
 
     <section id="download" className="download-section download-proof shell" data-reveal>
-      <div className="download-top"><div><p className="eyebrow">ASTRA FOR WINDOWS</p><h2>Understand first.<br /><em>Then decide.</em></h2></div><div className="download-action"><a className="button" href={releaseUrl}>Download Astra <Download size={16} strokeWidth={1.9} aria-hidden="true" /></a><p>Version 1.0.0 · Windows x64 · Free</p></div></div>
+      <div className="download-top"><div><p className="eyebrow">ASTRA FOR WINDOWS</p><h2>Understand first.<br /><em>Then decide.</em></h2></div><div className="download-action"><a className="button" href={astraRelease.downloadUrl}>Download Astra <Download size={16} strokeWidth={1.9} aria-hidden="true" /></a><p>Version {astraRelease.version} · Windows x64 · Free</p><a className="release-notes-link" href={astraRelease.notesUrl} target="_blank" rel="noreferrer">Release notes &amp; checksum <ArrowUpRight size={14} strokeWidth={1.8} aria-hidden="true" /></a></div></div>
       <div className="download-details">
-        <article><span>LATEST RELEASE</span><h3>Version 1.0.0</h3><ul><li>Natural-language system diagnosis</li><li>Local evidence attached to answers</li><li>Ollama and Groq provider choice</li></ul></article>
+        <article><span>LATEST RELEASE</span><h3>Version {astraRelease.version}</h3><ul><li>Natural-language system diagnosis</li><li>Local evidence attached to answers</li><li>Ollama and Groq provider choice</li></ul></article>
         <article><span>SYSTEM REQUIREMENTS</span><h3>Windows desktop</h3><ul><li>Windows 10 or Windows 11</li><li>64-bit processor</li><li>Ollama optional for local reasoning</li></ul></article>
         <article className="security-reassurance"><span>SECURITY REASSURANCE</span><h3>Nothing changes silently.</h3><p>Diagnostics are read-only. Any future action that modifies Windows must be shown to you and explicitly approved first.</p><Link href="/policies">Review the trust model <ArrowRight size={14} strokeWidth={1.8} aria-hidden="true" /></Link></article>
       </div>

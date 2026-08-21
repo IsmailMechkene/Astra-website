@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, ChevronDown, CornerDownRight, Download } from "lucide-react";
+import { astraRelease } from "../release";
 import { SiteHeader } from "../site-header";
 import { DocsSidebar } from "./docs-sidebar";
 
@@ -72,7 +73,7 @@ export default function Docs() {
 
           <section id="download" className="docs-section">
             <div className="docs-section-label"><span>02</span><p>DOWNLOAD</p></div>
-            <div className="docs-section-body"><h2>Download and verify.</h2><p>Only use an installer linked from the official Astra website. The first public release is unsigned, so Windows may identify its publisher as unknown.</p><div className="release-record"><div><span>INSTALLER</span><strong>Astra-Setup-1.0.0-x64.exe</strong></div><div><span>VERSION</span><strong>1.0.0</strong></div><div><span>SIZE</span><strong>109.3 MiB</strong></div><div><span>SIGNATURE</span><strong>Not signed</strong></div><div className="release-hash"><span>SHA-256</span><code>443C19C0309B03B04A03AC87A7CF8C52E3DE4DFAE78B8DAFCE2810487ABA7678</code></div></div><p>Calculate the file hash in PowerShell and compare every character with the value above:</p><CodeBlock>{"Get-FileHash .\\Astra-Setup-1.0.0-x64.exe -Algorithm SHA256"}</CodeBlock><div className="docs-note warning"><strong>Unsigned release</strong><p>If SmartScreen appears, confirm the official source and checksum before using its additional-information option to continue.</p></div><Link className="text-link" href="/#download">Go to download <Download size={15} strokeWidth={1.8} aria-hidden="true" /></Link></div>
+            <div className="docs-section-body"><h2>Download and verify.</h2><p>Only use an installer linked from the official Astra website. The first public release is unsigned, so Windows may identify its publisher as unknown.</p><div className="release-record"><div><span>INSTALLER</span><strong>Astra-Setup-1.0.0-x64.exe</strong></div><div><span>VERSION</span><strong>{astraRelease.version}</strong></div><div><span>SIZE</span><strong>109.3 MiB</strong></div><div><span>SIGNATURE</span><strong>Not signed</strong></div><div className="release-hash"><span>SHA-256</span><code>64A4009ADF4192557B1F442B7FF932646F4A1239EED0B84DD1267CCE6FFA32AC</code></div></div><p>Calculate the file hash in PowerShell and compare every character with the value above:</p><CodeBlock>{"Get-FileHash .\\Astra-Setup-1.0.0-x64.exe -Algorithm SHA256"}</CodeBlock><div className="docs-note warning"><strong>Unsigned release</strong><p>If SmartScreen appears, confirm the official source and checksum before using its additional-information option to continue.</p></div><a className="text-link" href={astraRelease.downloadUrl}>Download Astra <Download size={15} strokeWidth={1.8} aria-hidden="true" /></a></div>
           </section>
 
           <section id="requirements" className="docs-section">
