@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SiteHeader } from "../site-header";
+import { DocsSidebar } from "./docs-sidebar";
 
 export const metadata = {
   title: "Documentation — Astra",
@@ -48,19 +49,7 @@ export default function Docs() {
     <main className="docs-page">
       <SiteHeader />
       <div className="shell docs-layout docs-manual">
-        <aside className="docs-sidebar">
-          <div className="docs-version"><span>ASTRA MANUAL</span><strong>v1.0.0</strong><small>Verified 21 Aug 2026</small></div>
-          <nav aria-label="Documentation sections">
-            <p>GETTING STARTED</p>
-            <a href="#quick-start">Quick start</a><a href="#download">Download & verify</a><a href="#requirements">Requirements</a><a href="#install">Install & first launch</a>
-            <p>CONFIGURATION</p>
-            <a href="#providers">Reasoning providers</a><a href="#ollama">Ollama setup</a><a href="#groq">Groq setup</a>
-            <p>USING ASTRA</p>
-            <a href="#using-astra">Core workflow</a><a href="#prompts">Example prompts</a><a href="#capabilities">What Astra inspects</a>
-            <p>REFERENCE</p>
-            <a href="#privacy">Privacy & security</a><a href="#limitations">Current limitations</a><a href="#troubleshooting">Troubleshooting</a><a href="#uninstall">Uninstall</a><a href="#faq">FAQ</a>
-          </nav>
-        </aside>
+        <DocsSidebar />
 
         <article className="docs-article">
           <header className="docs-hero">

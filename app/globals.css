@@ -563,3 +563,35 @@ button { color: inherit; }
   .capability-list p { grid-column:2; }
   .docs-footer { align-items:flex-start; flex-direction:column; gap:25px; }
 }
+
+/* documentation readability corrections */
+.docs-manual .docs-sidebar { scrollbar-width:none; }
+.docs-manual .docs-sidebar::-webkit-scrollbar { display:none; }
+.docs-manual .docs-sidebar nav p { margin:25px 0 9px; color:#60768b; font:600 8px/1.4 'Geist Mono',monospace; letter-spacing:.14em; }
+.docs-manual .docs-sidebar nav a { position:relative; min-height:29px; display:flex; align-items:center; padding:4px 0 4px 13px; color:#8094a8; font-size:12.5px; line-height:1.35; transition:color var(--fast),transform var(--fast); }
+.docs-manual .docs-sidebar nav a::before { content:""; position:absolute; left:0; width:2px; height:14px; background:transparent; transition:background var(--fast),box-shadow var(--fast); }
+.docs-manual .docs-sidebar nav a:hover { color:#c8d5e1; transform:translateX(2px); }
+.docs-manual .docs-sidebar nav a.is-active { color:#dce7f1; }
+.docs-manual .docs-sidebar nav a.is-active::before { background:var(--teal); box-shadow:0 0 10px rgba(100,214,200,.35); }
+.docs-manual .docs-hero h1 { font-size:clamp(58px,6vw,82px); line-height:.94; letter-spacing:-.068em; }
+.docs-manual .docs-hero .docs-lede { color:#a8b9c9; font-size:19px; line-height:1.65; }
+.docs-manual .docs-section-label p { margin:9px 0 0; color:#6e859a; font:600 8px/1.4 'Geist Mono',monospace; letter-spacing:.13em; }
+.docs-manual .docs-section-body>h2 { margin:0 0 30px; color:#e4edf5; font-size:clamp(40px,4.1vw,54px); line-height:1.02; letter-spacing:-.055em; }
+.docs-manual .docs-section-body>h3 { color:#d9e3ed; font-size:23px; line-height:1.25; }
+.docs-manual .docs-section-body>p,.docs-manual .docs-section-body>ol>li,.docs-manual .docs-section-body>ul>li { color:#9fb0c0; font-size:15px; line-height:1.78; }
+.docs-manual .docs-steps p { color:#91a4b6; font-size:14px; line-height:1.7; }
+.docs-manual .provider-requirements li { color:#91a4b6; font-size:13.5px; line-height:1.6; }
+.docs-manual .prompt-grid li { color:#a3b3c3; font-size:13.5px; line-height:1.55; }
+.docs-manual .capability-list p { color:#91a4b6; font-size:13.5px; line-height:1.7; }
+.docs-manual .privacy-statements p,.docs-manual .faq-grid p { color:#91a4b6; font-size:13.5px; line-height:1.7; }
+.docs-manual .troubleshooting-list details p { color:#96a8ba; font-size:14px; line-height:1.78; }
+.docs-manual .docs-meta span { color:#8196aa; font-size:8.5px; }
+.docs-manual .docs-section { scroll-margin-top:83px; }
+
+@media (max-width:760px) {
+  .docs-manual .docs-hero h1 { font-size:48px; line-height:.96; }
+  .docs-manual .docs-hero .docs-lede { font-size:16px; line-height:1.7; }
+  .docs-manual .docs-section-body>h2 { font-size:40px; line-height:1.04; }
+  .docs-manual .docs-section-label p { margin-top:0; }
+  .docs-manual .docs-section-body>p,.docs-manual .docs-section-body>ol>li,.docs-manual .docs-section-body>ul>li { font-size:15px; }
+}
