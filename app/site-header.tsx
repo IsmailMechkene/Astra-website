@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Download, Menu, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { type MouseEvent, useEffect, useRef, useState } from "react";
 import { astraRelease } from "./release";
 
 export function SiteHeader() {
@@ -23,21 +23,27 @@ export function SiteHeader() {
   }, []);
 
   const close = () => setMobileOpen(false);
+  const navigate = (event: MouseEvent<HTMLAnchorElement>) => {
+    close();
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    window.location.assign(event.currentTarget.href);
+  };
 
   return (
     <header className="site-nav-wrap" ref={headerRef}>
       <div className="site-nav-shell shell">
         <nav className="site-nav professional-nav" aria-label="Main navigation">
-          <Link className="astra-nav-brand" href="/" aria-label="Astra home" onClick={close}>
+          <Link className="astra-nav-brand" href="/" aria-label="Astra home" onClick={navigate}>
             <img src="/astra_logo.svg" alt="" />
             <span>Astra</span>
           </Link>
 
           <div className="nav-links professional-nav-links">
-            <Link href="/#how" onClick={close}>How it works</Link>
-            <Link href="/#trust" onClick={close}>Trust</Link>
-            <Link href="/#opensource" onClick={close}>Open source</Link>
-            <Link href="/docs" onClick={close}>Docs</Link>
+            <Link href="/#how" onClick={navigate}>How it works</Link>
+            <Link href="/#trust" onClick={navigate}>Trust</Link>
+            <Link href="/#opensource" onClick={navigate}>Open source</Link>
+            <Link href="/docs" onClick={navigate}>Docs</Link>
           </div>
 
           <div className="nav-actions">
@@ -57,10 +63,10 @@ export function SiteHeader() {
         </nav>
 
         <div className={`mobile-menu simple-mobile-menu${mobileOpen ? " is-open" : ""}`} aria-hidden={!mobileOpen}>
-          <Link href="/#how" onClick={close}>How it works</Link>
-          <Link href="/#trust" onClick={close}>Trust</Link>
-          <Link href="/#opensource" onClick={close}>Open source</Link>
-          <Link href="/docs" onClick={close}>Documentation</Link>
+          <Link href="/#how" onClick={navigate}>How it works</Link>
+          <Link href="/#trust" onClick={navigate}>Trust</Link>
+          <Link href="/#opensource" onClick={navigate}>Open source</Link>
+          <Link href="/docs" onClick={navigate}>Documentation</Link>
         </div>
       </div>
     </header>
